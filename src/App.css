@@ -1,42 +1,114 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+/* -------------------------- Estilos para ProductList -------------------------- */
+.main-content {
+    /* Padding mínimo para móviles */
+    padding: 0.5rem; 
+    max-width: 1280px; 
+    margin: 0 auto;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.title {
+    font-size: 1.5rem; 
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: #333;
+    text-align: center;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* ---------------------------------------------------- */
+/* 1. LAYOUT CRÍTICO: Configura la cuadrícula de productos */
+/* USAMOS GRID para control estricto de columnas */
+/* ---------------------------------------------------- */
+.products {
+    display: grid;
+    /* Móvil: 2 columnas forzadas con espaciado compacto */
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 0.75rem; 
+    justify-content: center; 
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+/* Tablets y Desktop (a partir de 640px): 5 columnas forzadas */
+@media (min-width: 640px) {
+    .products {
+        grid-template-columns: repeat(5, 1fr);
+        gap: 1.5rem;
+    }
 }
 
-.card {
-  padding: 2em;
+.product-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    /* La altura debe ser automática, pero definida por el contenido, el grid maneja el ancho. */
+    height: auto; 
+    padding: 0.5rem; 
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); 
+    transition: transform 0.2s, box-shadow 0.2s;
+    display: flex; 
+    flex-direction: column;
+    justify-content: space-between; /* Alinea contenido y separa imagen del footer */
 }
 
-.read-the-docs {
-  color: #888;
+.product-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+
+/* ---------------------------------------------------- */
+/* 2. ESTILOS DE IMAGEN: Uniformidad y Proporción (CRÍTICO) */
+/* ---------------------------------------------------- */
+
+.product-image-container {
+    width: 100%;
+    /* Altura fija basada en la proporción, ESENCIAL para uniformidad */
+    aspect-ratio: 1 / 1.3; 
+    margin-bottom: 0.4rem; 
+    overflow: hidden; /* IMPORTANTE: Recorta cualquier parte de la imagen que exceda */
+    border-radius: 6px;
+    flex-shrink: 0; /* Asegura que el contenedor de imagen no se encoja */
+}
+
+.product-image {
+    /* La imagen DEBE ocupar el 100% del contenedor fijo */
+    width: 100%;
+    height: 100%; 
+    /* Esta es la propiedad clave: Cubre el área manteniendo la proporción, recortando los bordes si es necesario */
+    object-fit: cover; 
+    display: block;
+}
+
+/* ---------------------------------------------------- */
+/* 3. ESTILOS DE TEXTO (para compacidad) */
+/* ---------------------------------------------------- */
+
+.product-name {
+    font-size: 0.85rem; 
+    font-weight: 500;
+    color: #4a4a4a;
+    margin-bottom: 0.15rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap; 
+}
+
+.product-price {
+    font-size: 1rem; 
+    font-weight: 700;
+    color: #007bff; 
+    margin-bottom: 0.2rem;
+}
+
+.product-stock {
+    font-size: 0.75rem; 
+    color: #6c757d;
+}
+
+.error-message {
+    color: red;
+    background-color: #fdd;
+    border: 1px solid #f99;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    border-radius: 4px;
+    text-align: center;
 }
