@@ -47,8 +47,10 @@ function App() {
   };
 
   return (
-    <>
-      {/* 🔹 Header y Footer estarán siempre visibles */}
+    // 💡 CORRECCIÓN CRÍTICA PARA MÓVIL: Añadir 'overflow-x-hidden' y asegurar 'min-h-screen'
+    // Esto previene el scroll horizontal causado por elementos que desbordan la pantalla
+    <div className="flex flex-col min-h-screen overflow-x-hidden">
+      {/* 🔹 Header y Footer estarán siempre visibles */ }
       <Header rol={rol} cerrarSesion={cerrarSesion} />
 
       <Routes>
@@ -73,7 +75,7 @@ function App() {
       </Routes>
 
       <Footer />
-    </>
+     </div >
   );
 }
 
