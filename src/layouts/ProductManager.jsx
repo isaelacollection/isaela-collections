@@ -31,7 +31,7 @@ const ProductManager = () => {
   const handleEditar = async (p) => {
     const nuevoPrecio = prompt(`Nuevo precio para ${p.nombre}:`, p.precio);
     if (nuevoPrecio === null) return;
-https://server-backend-vf5p.onrender.com
+//https://server-backend-vf5p.onrender.com
     //const res = await fetch(`http://localhost:5000/api/products/${p._id}`, {
     const res = await fetch(`https://server-backend-vf5p.onrender.com/api/products/${p._id}`, {
 
@@ -51,7 +51,7 @@ https://server-backend-vf5p.onrender.com
   // 🔹 Eliminar producto
   const handleEliminar = async (id) => {
     if (!window.confirm("¿Seguro que deseas eliminar este producto?")) return;
-https://server-backend-vf5p.onrender.com
+//https://server-backend-vf5p.onrender.com
     //const res = await fetch(`http://localhost:5000/api/products/${id}`, {
     const res = await fetch(`https://server-backend-vf5p.onrender.com/api/products/${id}`, {
       method: "DELETE",
