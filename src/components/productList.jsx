@@ -68,7 +68,8 @@ const ProductList = () => {
             <h3 className="product-name">{p.nombre}</h3>
             <p className="product-price">${p.precio}</p>
             {/* Muestra el stock si está disponible, o un espacio vacío si no lo está */}
-            <p className="product-stock">{p.stock ? `Stock: ${p.stock}` : ''}</p> 
+           {/** <p className="product-stock">{p.stock ? `Stock: ${p.stock}` : ''}</p>*/} 
+           <p className="product-stock">{}</p> 
             
           </div>
         ))}
