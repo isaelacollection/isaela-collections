@@ -6,8 +6,8 @@ const Header = ({ cerrarSesion, rol }) => {
   return (
     <header className="bg-white shadow-md px-6 py-3 flex justify-between items-center">
       <h1 className="text-2xl font-bold tracking-wide">
-        <span className="text-black">ISA</span>
-        <span className="text-teal-500">ELA</span>
+        <span className="text-black">ISAELA</span>
+        <span className="text-#FB64B6">COLLECTION</span>
       </h1>
 
       <nav className="flex items-center gap-6">
