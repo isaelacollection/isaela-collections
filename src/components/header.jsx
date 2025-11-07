@@ -38,11 +38,11 @@ const Header = ({ cerrarSesion, rol }) => {
         {/* Si está logueado, mostrar "Cerrar sesión" */}
         {rol && (
           <>
-<Link
+            <Link
               to="/admin"
               className="text-gray-700 hover:text-teal-500 text-sm font-medium"
             >
-              home
+              Home
             </Link>
 
             <button
@@ -53,7 +53,7 @@ const Header = ({ cerrarSesion, rol }) => {
             </button>
 
 
-            
+
           </>
         )}
 
