@@ -76,7 +76,7 @@ const ProductList = () => {
             <div className="product-actions">
               {/* Botón de WhatsApp (ejemplo de enlace) */}
               <a
-                href={`https://wa.me/XXXXXXXXXX?text=Me%20interesa%20el%20producto:%20${p.nombre}`}
+                href={`https://wa.me/0998694414?text=Hola,%20me%20interesa%20el%20producto:%20${p.nombre}%20que%20vi%20en%20la%20tienda.`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn btn-whatsapp" // Clase para estilo de WhatsApp
