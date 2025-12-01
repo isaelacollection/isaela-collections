@@ -73,37 +73,49 @@ const ProductList = () => {
 
 
             {/* 🚀 Nueva Sección: Botones de Acción */}
-            <div className="product-actions">
-              {/* Botón de WhatsApp (ejemplo de enlace) */}
-              {/* Botón de WhatsApp con estilos de Tailwind CSS */}
+            {/* Contenedor de Acciones: AÑADE ESTAS CLASES */}
+            <div className="product-actions flex justify-between items-center p-2 w-full">
+
+              {/* Botón de WhatsApp: Clase ajustada a w-1/2 (50% de ancho) */}
               <a
                 href={`https://wa.me/593998694414?text=Hola,%20me%20interesa%20el%20producto:%20${p.nombre}%20que%20vi%20en%20la%20tienda.`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="
-                          flex items-center justify-center 
-                          bg-green-500 hover:bg-green-600 
-                            text-white 
-                            font-bold 
-                            py-2 px-4 
-                            rounded-lg 
-                            shadow-md 
-                            transition duration-300 ease-in-out
-                            w-1/2  /* Ocupa la mitad del ancho del contenedor */
-                            mr-2   /* Margen derecho para separarlo del otro botón */
-                          "
+      flex items-center justify-center 
+      bg-green-500 hover:bg-green-600 
+      text-white 
+      font-bold 
+      py-2 px-4 
+      rounded-lg 
+      shadow-md 
+      transition duration-300 ease-in-out
+      w-1/2  /* Ocupa el 50% */
+      mr-2   /* Margen derecho */
+    "
               >
                 📱 WhatsApp
               </a>
 
-              {/* Botón de Detalles (ejemplo de manejo de evento o enlace) */}
+              {/* Botón de Detalles: Clase ajustada a w-1/2, con un estilo de botón "secundario" */}
               <button
-                className="btn btn-details" // Clase para estilo de Detalles
-              // Aquí puedes añadir lógica de navegación, como un `onClick` que redirija o muestre un modal.
+                className="
+      flex items-center justify-center
+      bg-transparent hover:bg-gray-100 
+      text-gray-700 
+      font-bold 
+      py-2 px-4 
+      rounded-lg
+      transition duration-300 ease-in-out
+      w-1/2  /* Ocupa el 50% */
+      ml-2   /* Margen izquierdo */
+      border border-gray-300 /* Borde sutil */
+    "
               // onClick={() => handleViewDetails(p.id)} 
               >
                 🔍 Detalles
               </button>
+
             </div>
 
 
