@@ -1,8 +1,8 @@
-import blazer1 from "../assets/blazer1.jpg";
-import blazer2 from "../assets/blazer2.jpg";
-import blazer3 from "../assets/blazer3.jpg";
-import blazer4 from "../assets/blazer4.jpg";
-import blazer5 from "../assets/blazer5.jpg";
+import Blazers from "../assets/Blazers.jpg";
+import Blusas from "../assets/Blusas.jpg";
+import Faldas from "../assets/Faldas.jpg";
+import Pantalones from "../assets/Pantalones.jpg";
+import Vestidos from "../assets/Vestidos.jpg";
 
 
 const IndiceDeProductos = () => {
@@ -12,7 +12,7 @@ const IndiceDeProductos = () => {
       {/* Tarjeta 1 */}
       <button className="bg-white rounded-xl shadow-md hover:shadow-xl transition p-4">
         <img
-          src={blazer1}
+          src={Blazers}
           alt="Blazer 1"
           className="w-full h-48 object-cover rounded-lg"
         />
@@ -22,7 +22,7 @@ const IndiceDeProductos = () => {
       {/* Tarjeta 2 */}
       <button className="bg-white rounded-xl shadow-md hover:shadow-xl transition p-4">
         <img
-          src={blazer2}
+          src={Blusas}
           alt="Blazer 2"
           className="w-full h-48 object-cover rounded-lg"
         />
@@ -32,7 +32,7 @@ const IndiceDeProductos = () => {
       {/* Tarjeta 3 */}
       <button className="bg-white rounded-xl shadow-md hover:shadow-xl transition p-4">
         <img
-          src={blazer3}
+          src={Faldas}
           alt="Blazer 3"
           className="w-full h-48 object-cover rounded-lg"
         />
@@ -42,7 +42,7 @@ const IndiceDeProductos = () => {
       {/* Tarjeta 4 */}
       <button className="bg-white rounded-xl shadow-md hover:shadow-xl transition p-4">
         <img
-          src={blazer4}
+          src={Pantalones}
           alt="Blazer 4"
           className="w-full h-48 object-cover rounded-lg"
         />
@@ -52,7 +52,7 @@ const IndiceDeProductos = () => {
       {/* Tarjeta 5 */}
       <button className="bg-white rounded-xl shadow-md hover:shadow-xl transition p-4">
         <img
-          src={blazer5}
+          src={Vestidos}
           alt="Blazer 5"
           className="w-full h-48 object-cover rounded-lg"
         />
