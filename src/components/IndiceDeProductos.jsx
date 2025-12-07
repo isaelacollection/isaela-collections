@@ -16,7 +16,7 @@ const IndiceDeProductos = () => {
           alt="Blazer 1"
           className="w-full h-48 object-cover rounded-lg"
         />
-        <h3 className="text-center mt-2 font-semibold">Opción 1</h3>
+        <h3 className="text-center mt-2 font-semibold">👆 Blazars </h3>
       </button>
 
       {/* Tarjeta 2 */}
@@ -26,7 +26,7 @@ const IndiceDeProductos = () => {
           alt="Blazer 2"
           className="w-full h-48 object-cover rounded-lg"
         />
-        <h3 className="text-center mt-2 font-semibold">Opción 2</h3>
+        <h3 className="text-center mt-2 font-semibold">👆 Blusas</h3>
       </button>
 
       {/* Tarjeta 3 */}
@@ -36,7 +36,7 @@ const IndiceDeProductos = () => {
           alt="Blazer 3"
           className="w-full h-48 object-cover rounded-lg"
         />
-        <h3 className="text-center mt-2 font-semibold">Opción 3</h3>
+        <h3 className="text-center mt-2 font-semibold">👆 Faldas</h3>
       </button>
 
       {/* Tarjeta 4 */}
@@ -46,7 +46,7 @@ const IndiceDeProductos = () => {
           alt="Blazer 4"
           className="w-full h-48 object-cover rounded-lg"
         />
-        <h3 className="text-center mt-2 font-semibold">Opción 4</h3>
+        <h3 className="text-center mt-2 font-semibold">👆 Pantalones</h3>
       </button>
 
       {/* Tarjeta 5 */}
@@ -56,7 +56,7 @@ const IndiceDeProductos = () => {
           alt="Blazer 5"
           className="w-full h-48 object-cover rounded-lg"
         />
-        <h3 className="text-center mt-2 font-semibold">Opción 5</h3>
+        <h3 className="text-center mt-2 font-semibold">👆 Vestidos</h3>
       </button>
 
     </div>
