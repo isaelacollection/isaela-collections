@@ -4,7 +4,8 @@ import blazer3 from "../assets/blazer3.jpg";
 import blazer4 from "../assets/blazer4.jpg";
 import blazer5 from "../assets/blazer5.jpg";
 
-export default function IndiceDeProductos() {
+
+const IndiceDeProductos = () => {
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 p-6">
 
@@ -61,3 +62,4 @@ export default function IndiceDeProductos() {
     </div>
   );
 }
+export default IndiceDeProductos;
