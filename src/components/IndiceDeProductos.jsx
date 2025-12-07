@@ -3,16 +3,17 @@ import Blusas from "../assets/Blusas.jpg";
 import Faldas from "../assets/Faldas.jpg";
 import Pantalones from "../assets/Pantalones.jpg";
 import Vestidos from "../assets/Vestidos.jpg";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 
 const IndiceDeProductos = () => {
+  const navigate = useNavigate();
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 p-6">
 
       {/* Tarjeta 1 */}
-      <Link to="/productList">
-      <button className="bg-white rounded-xl shadow-md hover:shadow-xl transition p-4">
+    
+      <button onClick={() => navigate("/productList")} className="bg-white rounded-xl shadow-md hover:shadow-xl transition p-4">
         <img
           src={Blazers}
           alt="Blazer 1"
@@ -20,7 +21,7 @@ const IndiceDeProductos = () => {
         />
         <h3 className="text-center mt-2 font-semibold">👆 Blazars </h3>
       </button>
-    </Link>
+  
 
       {/* Tarjeta 2 */ }
   <button className="bg-white rounded-xl shadow-md hover:shadow-xl transition p-4">

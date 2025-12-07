@@ -11,6 +11,8 @@ import AdminLayout from "./layouts/AdminLayout";
 import Header from "./components/header";
 import Footer from "./components/Footer";
 import ProductManager from "./layouts/ProductManager";
+import ProductList from "./components/productList";
+
 import { useNavigate } from "react-router-dom"; // 🔹 Importa esto arriba
 
 
@@ -57,6 +59,7 @@ function App() {
         {/* Rutas públicas */}
         <Route element={<PublicLayout />}>
           <Route path="/" element={<Home />} />
+          <Route path="/productList" element={<ProductList />} />
           <Route path="/login" element={<Login onLogin={handleLogin} />} />
         </Route>
 
