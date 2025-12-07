@@ -63,8 +63,6 @@ function App() {
         {/* Rutas de administrador */}
         {rol === "administrador" && (
           <Route element={<AdminLayout />}>
-            {/**<Route path="/admin" element={<AdminDashboard />} /> */}
-            {/*<Route path="/admin" element={<SubirProducto />} />*/}
             <Route path="/admin" element={<Home />} />
             <Route path="/admin/ProductManager" element={<ProductManager />} />
           </Route>
