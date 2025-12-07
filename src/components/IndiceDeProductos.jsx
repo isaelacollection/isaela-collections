@@ -11,7 +11,7 @@ const IndiceDeProductos = () => {
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 p-6">
 
       {/* Tarjeta 1 */}
-      <Link to="/product-list">
+      <Link to="/productList">
       <button className="bg-white rounded-xl shadow-md hover:shadow-xl transition p-4">
         <img
           src={Blazers}
