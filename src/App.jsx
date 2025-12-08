@@ -16,7 +16,7 @@ import ProductManagerPantalones from "./layouts/ProductManagerPantalones";
 import ProductListPantalones from "./components/productListPantalones";
 
 import { useNavigate } from "react-router-dom"; // 🔹 Importa esto arriba
-import ProductManagerPantalones from "./layouts/ProductManagerPantalones";
+
 
 
 function App() {
