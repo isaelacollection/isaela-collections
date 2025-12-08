@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import SubirProductoPantalones from "../pages/subirProductoPantalones";
 import TablaProductosPantalones from "../components/ProductsTablePantalones";
-
+//este es una funcion
 const ProductManagerPantalones = () => {
   const [productos, setProductos] = useState([]);
 
