@@ -19,7 +19,7 @@ const subirProductoPantalones = ({ onProductoAgregado }) => {
     try {
       //const res = await fetch("http://localhost:5000/api/products", {
       //https://server-backend-vf5p.onrender.com
-      const res = await fetch(" https://server-backend-vf5p.onrender.com/api/products", {
+      const res = await fetch(" https://server-backend-vf5p.onrender.com/api/productPantalones", {
         method: "POST",
         body: formData,
       });
