@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
-import SubirProducto from "../pages/subirProductoPantalones";
-import TablaProductos from "../components/ProductsTablePantalones";
+import SubirProductoPantalones from "../pages/subirProductoPantalones";
+import TablaProductosPantalones from "../components/ProductsTablePantalones";
 
 const ProductManagerPantalones = () => {
   const [productos, setProductos] = useState([]);
@@ -9,7 +9,7 @@ const ProductManagerPantalones = () => {
   useEffect(() => {
     const fetchProductos = async () => {
       // const res = await fetch("http://localhost:5000/api/products");
-      const res = await fetch("https://server-backend-vf5p.onrender.com/api/products");
+      const res = await fetch("https://server-backend-vf5p.onrender.com/api/productPantalones");
 
       const data = await res.json();
       setProductos(data);
