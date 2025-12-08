@@ -29,7 +29,7 @@ const Footer = () => {
         <div>
           <h3 className="text-lg font-semibold mb-4 border-b border-gray-600 pb-1">CONTÁCTENOS</h3>
           <ul className="space-y-2 text-sm">
-            <li>Tel: (0998694414)---(0980198578)</li>
+            <li>Tel: (0979906565)</li>
             <li>La Gasca, Quito, Ecuador C.A</li>
             <li>Email: isaelacollection@gmail.com</li>
              <li>facebook: isaelacollection@gmail.com</li>
