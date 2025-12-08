@@ -1,20 +1,20 @@
 import { useState } from "react";
 
 const subirProductoPantalones = ({ onProductoAgregado }) => {
-  const [nombre, setNombre] = useState("");
-  const [precio, setPrecio] = useState("");
-  const [stock, setStock] = useState("");
-  const [imagen, setImagen] = useState(null);
+  const [nombrePantalon, setnombrePantalon] = useState("");
+  const [precioPantalon, setprecioPantalon] = useState("");
+  const [stockPantalon, setstockPantalon] = useState("");
+  const [imagenPantalon, setimagenPantalon] = useState(null);
   const [mensaje, setMensaje] = useState(""); // 👈 nuevo estado para el mensaje
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     const formData = new FormData();
-    formData.append("nombre", nombre);
-    formData.append("precio", precio);
-    formData.append("stock", stock);
-    formData.append("imagen", imagen);
+    formData.append("nombrePantalon", nombrePantalon);
+    formData.append("precioPantalon", precioPantalon);
+    formData.append("stockPantalon", stockPantalon);
+    formData.append("imagenPantalon", imagenPantalon);
 
     try {
       //const res = await fetch("http://localhost:5000/api/products", {
@@ -31,10 +31,10 @@ const subirProductoPantalones = ({ onProductoAgregado }) => {
       onProductoAgregado(data); // notificar al padre
       
       // limpiar formulario
-      setNombre("");
-      setPrecio("");
-      setStock("");
-      setImagen(null);
+      setnombrePantalon("");
+      setprecioPantalon("");
+      setstockPantalon("");
+      setimagenPantalon(null);
 
       // mostrar mensaje de éxito
       setMensaje("✅ Producto creado con éxito");
@@ -51,40 +51,40 @@ const subirProductoPantalones = ({ onProductoAgregado }) => {
       <h2 className="text-lg font-semibold text-gray-800">Agregar Producto</h2>
 
       <div>
-        <label className="block text-gray-700 mb-1">Nombre pantalon</label>
+        <label className="block text-gray-700 mb-1">nombrePantalon pantalon</label>
         <input
           type="text"
-          value={nombre}
-          onChange={(e) => setNombre(e.target.value)}
+          value={nombrePantalon}
+          onChange={(e) => setnombrePantalon(e.target.value)}
           className="w-full border rounded-md p-2"
         />
       </div>
 
       <div>
-        <label className="block text-gray-700 mb-1">Precio pantalon</label>
+        <label className="block text-gray-700 mb-1">precioPantalon pantalon</label>
         <input
           type="number"
-          value={precio}
-          onChange={(e) => setPrecio(e.target.value)}
+          value={precioPantalon}
+          onChange={(e) => setprecioPantalon(e.target.value)}
           className="w-full border rounded-md p-2"
         />
       </div>
 
       <div>
-        <label className="block text-gray-700 mb-1">Stock pantalon</label>
+        <label className="block text-gray-700 mb-1">stockPantalon pantalon</label>
         <input
           type="number"
-          value={stock}
-          onChange={(e) => setStock(e.target.value)}
+          value={stockPantalon}
+          onChange={(e) => setstockPantalon(e.target.value)}
           className="w-full border rounded-md p-2"
         />
       </div>
 
       <div>
-        <label className="block text-gray-700 mb-1">Imagen pantalon</label>
+        <label className="block text-gray-700 mb-1">imagenPantalon pantalon</label>
         <input
           type="file"
-          onChange={(e) => setImagen(e.target.files[0])}
+          onChange={(e) => setimagenPantalon(e.target.files[0])}
           className="w-full border rounded-md p-2"
         />
       </div>
