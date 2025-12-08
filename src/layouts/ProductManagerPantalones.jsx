@@ -66,9 +66,9 @@ const ProductManagerPantalones = () => {
     <div className="max-w-4xl mx-auto p-6">
       <h1 className="text-2xl font-semibold mb-6 text-gray-800">Gestión de Productos</h1>
 
-      <SubirProducto onProductoAgregado={handleProductoAgregado} />
+      <SubirProductoPantalones onProductoAgregado={handleProductoAgregado} />
 
-      <TablaProductos
+      <TablaProductosPantalones
         productos={productos}
         onDetalles={handleDetalles}
         onEditar={handleEditar}
