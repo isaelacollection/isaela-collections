@@ -13,7 +13,7 @@ const Sidebar = () => {
           👕 Ingresar prenda blazers 
         </Link>
         <Link
-          to="admin/ProductManager"
+          to="admin/ProductManagerPantalones"
           className="text-gray-700 hover:text-teal-600 hover:bg-gray-100 rounded-md p-2 transition">
            👕Ingresar prenda pantalones
         </Link>
