@@ -12,8 +12,11 @@ import Header from "./components/header";
 import Footer from "./components/Footer";
 import ProductManager from "./layouts/ProductManager";
 import ProductList from "./components/productList";
+import ProductManager from "./layouts/ProductManagerPantalones";
+import ProductList from "./components/productListPantalones";
 
 import { useNavigate } from "react-router-dom"; // 🔹 Importa esto arriba
+import ProductManagerPantalones from "./layouts/ProductManagerPantalones";
 
 
 function App() {
@@ -60,6 +63,7 @@ function App() {
         <Route element={<PublicLayout />}>
           <Route path="/" element={<Home />} />
           <Route path="/productList" element={<ProductList />} />
+           <Route path="/productListPantalones" element={<ProductListPantalones />} />
           <Route path="/login" element={<Login onLogin={handleLogin} />} />
         </Route>
 
@@ -68,6 +72,7 @@ function App() {
           <Route element={<AdminLayout />}>
             <Route path="/admin" element={<Home />} />
             <Route path="/admin/ProductManager" element={<ProductManager />} />
+            <Route path="/admin/ProductManagerPantalones" element={<ProductManagerPantalones />} />
           </Route>
         )}
 
