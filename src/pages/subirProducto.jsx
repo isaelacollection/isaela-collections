@@ -17,8 +17,6 @@ const SubirProducto = ({ onProductoAgregado }) => {
     formData.append("imagen", imagen);
 
     try {
-      //const res = await fetch("http://localhost:5000/api/products", {
-      //https://server-backend-vf5p.onrender.com
       const res = await fetch(" https://server-backend-vf5p.onrender.com/api/products", {
         method: "POST",
         body: formData,
@@ -29,7 +27,7 @@ const SubirProducto = ({ onProductoAgregado }) => {
 
       const data = await res.json();
       onProductoAgregado(data); // notificar al padre
-      
+
       // limpiar formulario
       setNombre("");
       setPrecio("");
@@ -40,7 +38,7 @@ const SubirProducto = ({ onProductoAgregado }) => {
       setMensaje("✅ Producto creado con éxito");
       // borrar mensaje después de 3 segundos
       setTimeout(() => setMensaje(""), 3000);
-      
+
     } catch (err) {
       console.error(err);
     }
