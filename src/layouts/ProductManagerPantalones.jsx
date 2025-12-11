@@ -9,7 +9,7 @@ const ProductManagerPantalones = () => {
   useEffect(() => {
     const fetchProductos = async () => {
       // const res = await fetch("http://localhost:5000/api/products");
-      const res = await fetch("https://server-backend-vf5p.onrender.com/api/productPantalones");
+      const res = await fetch("https://server-backend-vf5p.onrender.com/api/productPantalons");
 
       const data = await res.json();
       setProductos(data);
