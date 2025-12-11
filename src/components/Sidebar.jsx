@@ -13,9 +13,9 @@ const Sidebar = () => {
           👕 Ingresar prenda blazers 
         </Link>
         <Link
-          to="admin/ProductsManagerPantalones"
+          to="admin/ProductManagerPantalones"
           className="text-gray-700 hover:text-teal-600 hover:bg-gray-100 rounded-md p-2 transition">
-           👕Ingresar prenda pantalones
+           👕Ingresar pantalones
         </Link>
         <Link
           to="almacenarAccesorio"
