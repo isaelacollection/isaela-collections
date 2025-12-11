@@ -14,7 +14,7 @@ const subirProductoPantalones = ({ onProductoAgregado }) => {
     formData.append("nombrePantalon", nombrePantalon);
     formData.append("precioPantalon", precioPantalon);
     formData.append("stockPantalon", stockPantalon);
-    formData.append("imagenPantalon", imagenPantalon);
+    formData.append("image", imagenPantalon);
 
     try {
       //const res = await fetch("http://localhost:5000/api/products", {
