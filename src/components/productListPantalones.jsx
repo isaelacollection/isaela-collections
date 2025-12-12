@@ -59,8 +59,8 @@ const ProductListPantalones = () => {
             {/* IMPLEMENTACIÓN CLAVE: El contenedor fijo de la imagen (para uniformidad) */}
             <div className="product-image-container">
               <img
-                src={p.image}
-                alt={p.nombre}
+                src={p.imagePantalon}
+                alt={p.nombrePantalon}
                 className="product-image"
               />
             </div>
