@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import "./productList.css";
 
 const ProductListPantalones = () => {
-  const [productos, setProductos] = useState([]);
+  const [productosPantalones, setProductosPantalones] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
@@ -19,7 +19,7 @@ const ProductListPantalones = () => {
         }
 
         const data = await res.json();
-        setProductos(data);
+        setProductosPantalones(data);
         setLoading(false);
       } catch (err) {
         // Manejo de errores de red (ej. CORS, servidor no responde)
@@ -52,7 +52,7 @@ const ProductListPantalones = () => {
 
       <div className="products">
 
-        {productos.map((p) => (
+        {productosPantalones.map((p) => (
           // Usamos p._id o p.id como clave única (key)
           <div className="product-card" key={p._id || p.id} >
 
