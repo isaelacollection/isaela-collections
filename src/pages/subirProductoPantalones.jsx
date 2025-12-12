@@ -14,7 +14,7 @@ const subirProductoPantalones = ({ onProductoAgregado }) => {
     formData.append("nombrePantalon", nombrePantalon);
     formData.append("precioPantalon", precioPantalon);
     formData.append("stockPantalon", stockPantalon);
-    formData.append("image", imagenPantalon);
+    formData.append("imagen", imagenPantalon);
 
     try {
       const res = await fetch("https://server-backend-vf5p.onrender.com/api/productPantalons", {
