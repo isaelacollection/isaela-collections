@@ -10,36 +10,31 @@ const Sidebar = () => {
         <Link
           to="admin/ProductManager"
           className="text-gray-700 hover:text-teal-600 hover:bg-gray-100 rounded-md p-2 transition">
-          👕 Ingresar prenda blazers 
+          🧥 Ingresar prenda blazers 
         </Link>
         <Link
           to="admin/ProductManagerPantalones"
           className="text-gray-700 hover:text-teal-600 hover:bg-gray-100 rounded-md p-2 transition">
-           👕Ingresar pantalones
+          👖 Ingresar pantalones
         </Link>
         <Link
           to="almacenarAccesorio"
           className="text-gray-700 hover:text-teal-600 hover:bg-gray-100 rounded-md p-2 transition">
-          🧢 Accesorios
+          👚 Ingresar blusas
         </Link>
         <a
           href="#"
           className="text-gray-700 hover:text-teal-600 hover:bg-gray-100 rounded-md p-2 transition"
         >
-          🧒 Niños
+          🩳 Ingresar faldas
         </a>
         <a
           href="#"
           className="text-gray-700 hover:text-teal-600 hover:bg-gray-100 rounded-md p-2 transition"
         >
-          👩 Damas
+          👗 Ingrsar vestidos
         </a>
-        <a
-          href="#"
-          className="text-gray-700 hover:text-teal-600 hover:bg-gray-100 rounded-md p-2 transition"
-        >
-          👨 Caballeros
-        </a>
+      
       </nav>
     </div>
   );
