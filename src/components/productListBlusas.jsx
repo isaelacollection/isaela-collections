@@ -10,7 +10,7 @@ const ProductListBlusas = () => {
     const fetchProductos = async () => {
       try {
         // La URL de tu backend en Render.
-        const res1 = await fetch("https://server-backend-vf5p.onrender.com/api/productPantalons");
+        const res1 = await fetch("https://server-backend-vf5p.onrender.com/api/productBlusas");
 
         // Manejo de errores de respuesta HTTP (404, 500, etc.)
         if (!res1.ok) {
