@@ -14,8 +14,8 @@ import ProductManager from "./layouts/ProductManager";
 import ProductList from "./components/productList";
 import ProductManagerPantalones from "./layouts/ProductManagerPantalones";
 import ProductListPantalones from "./components/productListPantalones";
-import ProductManagerPantalones from "./layouts/ProductManagerBlusas";
-import ProductListPantalones from "./components/productListBlusas";
+import ProductManagerBlusas from "./layouts/ProductManagerBlusas";
+import ProductListBlusas from "./components/productListBlusas";
 
 import { useNavigate } from "react-router-dom"; // 🔹 Importa esto arriba
 
