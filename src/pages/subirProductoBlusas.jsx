@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const subirProductoPantalones = ({ onProductoAgregado }) => {
+const subirProductoBlusas = ({ onProductoAgregado }) => {
   const [nombrePantalon, setnombrePantalon] = useState("");
   const [precioPantalon, setprecioPantalon] = useState("");
   const [stockPantalon, setstockPantalon] = useState("");
@@ -97,4 +97,4 @@ const subirProductoPantalones = ({ onProductoAgregado }) => {
   );
 };
 
-export default subirProductoPantalones;
+export default subirProductoBlusas;
