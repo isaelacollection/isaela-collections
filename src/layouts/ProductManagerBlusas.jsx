@@ -66,9 +66,9 @@ const ProductManagerBlusas = () => {
     <div className="max-w-4xl mx-auto p-6">
       <h1 className="text-2xl font-semibold mb-6 text-gray-800">Gestión de Productos</h1>
 
-      <SubirProductoPantalones onProductoAgregado={handleProductoAgregado} />
+      <SubirProductoBlusas onProductoAgregado={handleProductoAgregado} />
 
-      <TablaProductosPantalones
+      <TablaProductosBlusas
         productos={productos}
         onDetalles={handleDetalles}
         onEditar={handleEditar}
