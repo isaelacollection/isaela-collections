@@ -10,16 +10,16 @@ const ProductListPantalones = () => {
     const fetchProductos = async () => {
       try {
         // La URL de tu backend en Render.
-        const res = await fetch("https://server-backend-vf5p.onrender.com/api/productPantalons");
+        const res1 = await fetch("https://server-backend-vf5p.onrender.com/api/productPantalons");
 
         // Manejo de errores de respuesta HTTP (404, 500, etc.)
-        if (!res.ok) {
+        if (!res1.ok) {
           const errorText = await res.text();
           throw new Error(`Error al cargar los productos: ${res.status}. Detalle: ${errorText.substring(0, 50)}...`);
         }
 
-        const data = await res.json();
-        setProductosPantalones(data);
+        const data1 = await res1.json();
+        setProductosPantalones(data1);
         setLoading(false);
       } catch (err) {
         // Manejo de errores de red (ej. CORS, servidor no responde)
@@ -65,8 +65,8 @@ const ProductListPantalones = () => {
               />
             </div>
 
-            <h3 className="product-name">{p.nombre}</h3>
-            <p className="product-price">${p.precio}</p>
+            <h3 className="product-name">{p.nombrePantalon}</h3>
+            <p className="product-price">${p.precioPantalon}</p>
             {/* Muestra el stock si está disponible, o un espacio vacío si no lo está */}
             {/** <p className="product-stock">{p.stock ? `Stock: ${p.stock}` : ''}</p>*/}
             <p className="product-stock">{ }</p>
@@ -78,7 +78,7 @@ const ProductListPantalones = () => {
 
               {/* Botón de WhatsApp: Clase ajustada a w-1/2 (50% de ancho) */}
               <a
-                href={`https://wa.me/593998694414?text=Hola,%20me%20interesa%20el%20producto:%20${p.nombre}%20que%20vi%20en%20la%20tienda.`}
+                href={`https://wa.me/593998694414?text=Hola,%20me%20interesa%20el%20producto:%20${p.nombrePantalon}%20que%20vi%20en%20la%20tienda.`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="
