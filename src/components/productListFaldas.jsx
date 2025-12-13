@@ -19,7 +19,7 @@ const ProductListFaldas = () => {
         }
 
         const data1 = await res1.json();
-        setProductosBlusas(data1);
+        setProductosFaldas(data1);
         setLoading(false);
       } catch (err) {
         // Manejo de errores de red (ej. CORS, servidor no responde)
