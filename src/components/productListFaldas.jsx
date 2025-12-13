@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 import "./productList.css";
 
-const ProductListPantalones = () => {
-  const [productosPantalones, setProductosPantalones] = useState([]);
+const ProductListFaldas = () => {
+  const [productosFaldas, setProductosFaldas] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
@@ -10,7 +10,7 @@ const ProductListPantalones = () => {
     const fetchProductos = async () => {
       try {
         // La URL de tu backend en Render.
-        const res1 = await fetch("https://server-backend-vf5p.onrender.com/api/productPantalons");
+        const res1 = await fetch("https://server-backend-vf5p.onrender.com/api/productFaldas");
 
         // Manejo de errores de respuesta HTTP (404, 500, etc.)
         if (!res1.ok) {
@@ -19,7 +19,7 @@ const ProductListPantalones = () => {
         }
 
         const data1 = await res1.json();
-        setProductosPantalones(data1);
+        setProductosBlusas(data1);
         setLoading(false);
       } catch (err) {
         // Manejo de errores de red (ej. CORS, servidor no responde)
@@ -46,27 +46,27 @@ const ProductListPantalones = () => {
   return (
     <section className="main-content">
 
-       <h2 className="title">Productos(pantalones) Disponibles</h2>
+       <h2 className="title">Productos(Faldas) Disponibles</h2>
       {/* Muestra el mensaje de error si existe */}
       {error && <p className="error-message">{error}</p>}
 
       <div className="products">
 
-        {productosPantalones.map((p) => (
+        {productosFaldas.map((p) => (
           // Usamos p._id o p.id como clave única (key)
           <div className="product-card" key={p._id || p.id} >
 
             {/* IMPLEMENTACIÓN CLAVE: El contenedor fijo de la imagen (para uniformidad) */}
             <div className="product-image-container">
               <img
-                src={p.imagePantalon}
-                alt={p.nombrePantalon}
+                src={p.imageFalda}
+                alt={p.nombreFalda}
                 className="product-image"
               />
             </div>
 
-            <h3 className="product-name">{p.nombrePantalon}</h3>
-            <p className="product-price">${p.precioPantalon}</p>
+            <h3 className="product-name">{p.nombreFalda}</h3>
+            <p className="product-price">${p.precioFalda}</p>
             {/* Muestra el stock si está disponible, o un espacio vacío si no lo está */}
             {/** <p className="product-stock">{p.stock ? `Stock: ${p.stock}` : ''}</p>*/}
             <p className="product-stock">{ }</p>
@@ -78,7 +78,7 @@ const ProductListPantalones = () => {
 
               {/* Botón de WhatsApp: Clase ajustada a w-1/2 (50% de ancho) */}
               <a
-                href={`https://wa.me/593998694414?text=Hola,%20me%20interesa%20el%20producto:%20${p.nombrePantalon}%20que%20vi%20en%20la%20tienda.`}
+                href={`https://wa.me/593998694414?text=Hola,%20me%20interesa%20el%20producto:%20${p.nombreFalda}%20que%20vi%20en%20la%20tienda.`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="
@@ -127,4 +127,4 @@ const ProductListPantalones = () => {
   );
 };
 
-export default ProductListPantalones;
+export default ProductListFaldas;

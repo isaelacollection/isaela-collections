@@ -16,6 +16,8 @@ import ProductManagerPantalones from "./layouts/ProductManagerPantalones";
 import ProductListPantalones from "./components/productListPantalones";
 import ProductManagerBlusas from "./layouts/ProductManagerBlusas";
 import ProductListBlusas from "./components/productListBlusas";
+import ProductManagerFaldas from "./layouts/ProductManagerFaldas";
+import ProductListFaldas from "./components/productListFaldas";
 
 import { useNavigate } from "react-router-dom"; // 🔹 Importa esto arriba
 
@@ -67,6 +69,7 @@ function App() {
           <Route path="/productList" element={<ProductList />} />
            <Route path="/productListPantalones" element={<ProductListPantalones />} />
             <Route path="/productListBlusas" element={<ProductListBlusas />} />
+            <Route path="/productListFaldas" element={<ProductListFaldas />} />
           <Route path="/login" element={<Login onLogin={handleLogin} />} />
         </Route>
 
@@ -77,6 +80,7 @@ function App() {
             <Route path="/admin/ProductManager" element={<ProductManager />} />
             <Route path="/admin/ProductManagerPantalones" element={<ProductManagerPantalones />} />
             <Route path="/admin/ProductManagerBlusas" element={<ProductManagerBlusas />} />
+            <Route path="/admin/ProductManagerFaldas" element={<ProductManagerFaldas />} />
           </Route>
         )}
 

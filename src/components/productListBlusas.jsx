@@ -15,7 +15,7 @@ const ProductListBlusas = () => {
         // Manejo de errores de respuesta HTTP (404, 500, etc.)
         if (!res1.ok) {
           const errorText = await res.text();
-          throw new Error(`Error al cargar los productos: ${res.status}. Detalle: ${errorText.substring(0, 50)}...`);
+          throw new Error(`Error al cargar los productos: ${res1.status}. Detalle: ${errorText.substring(0, 50)}...`);
         }
 
         const data1 = await res1.json();

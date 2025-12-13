@@ -1,4 +1,4 @@
-const TablaProductosBlusas = ({ productos, onDetalles, onEditar, onEliminar }) => {
+const TablaProductosFaldas = ({ productos, onDetalles, onEditar, onEliminar }) => {
   return (
     <div className="overflow-x-auto mt-6">
       <table className="min-w-full border border-gray-300 bg-white rounded-lg shadow-md">
@@ -15,14 +15,14 @@ const TablaProductosBlusas = ({ productos, onDetalles, onEditar, onEliminar }) =
         <tbody>
           {productos.map((p) => (
             <tr key={p._id} className="border-t hover:bg-gray-50">
-              <td className="py-2 px-4">{p.nombreBlusa}</td>
-              <td className="py-2 px-4">${p.precioBlusa}</td>
-              <td className="py-2 px-4">{p.stockBlusa}</td>
+              <td className="py-2 px-4">{p.nombreFalda}</td>
+              <td className="py-2 px-4">${p.precioFalda}</td>
+              <td className="py-2 px-4">{p.stockFalda}</td>
 
               <td className="py-2 px-4">
                 <img
-                  src={p.imagenUrl || p.imageBlusa || p.imageBlusa}
-                  alt={p.nombreBlusa}
+                  src={p.imagenUrl || p.imageFalda || p.imageFalda}
+                  alt={p.nombreFalda}
                   className="w-10 h-10 object-contain"
                 />
               </td>
@@ -60,4 +60,4 @@ const TablaProductosBlusas = ({ productos, onDetalles, onEditar, onEliminar }) =
   );
 };
 
-export default TablaProductosBlusas;
+export default TablaProductosFaldas;
