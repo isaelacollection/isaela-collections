@@ -14,7 +14,7 @@ const ProductListFaldas = () => {
 
         // Manejo de errores de respuesta HTTP (404, 500, etc.)
         if (!res1.ok) {
-          const errorText = await res.text();
+          const errorText = await res1.text();
           throw new Error(`Error al cargar los productos: ${res1.status}. Detalle: ${errorText.substring(0, 50)}...`);
         }
 
