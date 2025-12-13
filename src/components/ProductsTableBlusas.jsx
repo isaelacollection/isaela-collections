@@ -15,13 +15,13 @@ const TablaProductosBlusas = ({ productos, onDetalles, onEditar, onEliminar }) =
         <tbody>
           {productos.map((p) => (
             <tr key={p._id} className="border-t hover:bg-gray-50">
-              <td className="py-2 px-4">{p.nombrePantalon}</td>
-              <td className="py-2 px-4">${p.precioPantalon}</td>
-              <td className="py-2 px-4">{p.stockPantalon}</td>
+              <td className="py-2 px-4">{p.nombreBlusa}</td>
+              <td className="py-2 px-4">${p.precioBlusa}</td>
+              <td className="py-2 px-4">{p.stockBlusa}</td>
 
               <td className="py-2 px-4">
                 <img
-                  src={p.imagenUrl || p.imagePantalon || p.imagePantalon}
+                  src={p.imagenUrl || p.imageBlusa || p.imageBlusa}
                   alt={p.nombrePantalon}
                   className="w-10 h-10 object-contain"
                 />
