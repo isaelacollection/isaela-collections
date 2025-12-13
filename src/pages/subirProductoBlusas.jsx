@@ -1,20 +1,20 @@
 import { useState } from "react";
 
 const subirProductoBlusas = ({ onProductoAgregado }) => {
-  const [nombrePantalon, setnombrePantalon] = useState("");
-  const [precioPantalon, setprecioPantalon] = useState("");
-  const [stockPantalon, setstockPantalon] = useState("");
-  const [imagenPantalon, setimagenPantalon] = useState(null);
+  const [nombreBlusa, setnombreBlusa] = useState("");
+  const [precioBlusa, setprecioBlusa] = useState("");
+  const [stockBlusa, setstockBlusa] = useState("");
+  const [imagenBlusa, setimagenBlusa] = useState(null);
   const [mensaje, setMensaje] = useState(""); // 👈 nuevo estado para el mensaje
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     const formData = new FormData();
-    formData.append("nombreBlusa", nombrePantalon);
-    formData.append("precioBlusa", precioPantalon);
-    formData.append("stockBlusa", stockPantalon);
-    formData.append("imagen", imagenPantalon);
+    formData.append("nombreBlusa", nombreBlusa);
+    formData.append("precioBlusa", precioBlusa);
+    formData.append("stockBlusa", stockBlusa);
+    formData.append("imagen", imagenBlusa);
 
     try {
       const res = await fetch("https://server-backend-vf5p.onrender.com/api/productBlusas", {
@@ -29,10 +29,10 @@ const subirProductoBlusas = ({ onProductoAgregado }) => {
       onProductoAgregado(data); // notificar al padre
       
       // limpiar formulario
-      setnombrePantalon("");
-      setprecioPantalon("");
-      setstockPantalon("");
-      setimagenPantalon(null);
+      setnombreBlusa("");
+      setprecioBlusa("");
+      setstockBlusa("");
+      setimagenBlusa(null);
 
       // mostrar mensaje de éxito
       setMensaje("✅ Producto creado con éxito");
@@ -46,43 +46,43 @@ const subirProductoBlusas = ({ onProductoAgregado }) => {
 
   return (
     <form onSubmit={handleSubmit} className="p-4 bg-white rounded-lg shadow-md space-y-4">
-      <h2 className="text-lg font-semibold text-gray-800">Agregar Producto</h2>
+      <h2 className="text-lg font-semibold text-gray-800">Agregar Producto Blusa</h2>
 
       <div>
-        <label className="block text-gray-700 mb-1">nombrePantalon pantalon</label>
+        <label className="block text-gray-700 mb-1">Nombre Blusa</label>
         <input
           type="text"
-          value={nombrePantalon}
-          onChange={(e) => setnombrePantalon(e.target.value)}
+          value={nombreBlusa}
+          onChange={(e) => setnombreBlusa(e.target.value)}
           className="w-full border rounded-md p-2"
         />
       </div>
 
       <div>
-        <label className="block text-gray-700 mb-1">precioPantalon pantalon</label>
+        <label className="block text-gray-700 mb-1">Precio Blusa</label>
         <input
           type="number"
-          value={precioPantalon}
-          onChange={(e) => setprecioPantalon(e.target.value)}
+          value={precioBlusa}
+          onChange={(e) => setprecioBlusa(e.target.value)}
           className="w-full border rounded-md p-2"
         />
       </div>
 
       <div>
-        <label className="block text-gray-700 mb-1">stockPantalon pantalon</label>
+        <label className="block text-gray-700 mb-1">Stock Blusa</label>
         <input
           type="number"
-          value={stockPantalon}
-          onChange={(e) => setstockPantalon(e.target.value)}
+          value={stockBlusa}
+          onChange={(e) => setstockBlusa(e.target.value)}
           className="w-full border rounded-md p-2"
         />
       </div>
 
       <div>
-        <label className="block text-gray-700 mb-1">imagenPantalon pantalon</label>
+        <label className="block text-gray-700 mb-1">imagen Blusa</label>
         <input
           type="file"
-          onChange={(e) => setimagenPantalon(e.target.files[0])}
+          onChange={(e) => setimagenBlusa(e.target.files[0])}
           className="w-full border rounded-md p-2"
         />
       </div>
