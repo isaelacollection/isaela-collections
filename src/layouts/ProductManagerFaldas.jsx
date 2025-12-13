@@ -33,7 +33,7 @@ const ProductManagerFaldas = () => {
     if (nuevoPrecio === null) return;
 //https://server-backend-vf5p.onrender.com
     //const res = await fetch(`http://localhost:5000/api/products/${p._id}`, {
-    const res = await fetch(`https://server-backend-vf5p.onrender.com/api/productBlusas/${p._id}`, {
+    const res = await fetch(`https://server-backend-vf5p.onrender.com/api/productFaldas/${p._id}`, {
 
       method: "PUT",
       headers: { "Content-Type": "application/json" },
@@ -53,7 +53,7 @@ const ProductManagerFaldas = () => {
     if (!window.confirm("¿Seguro que deseas eliminar este producto?")) return;
 //https://server-backend-vf5p.onrender.com
     //const res = await fetch(`http://localhost:5000/api/products/${id}`, {
-    const res = await fetch(`https://server-backend-vf5p.onrender.com/api/productBlusas/${id}`, {
+    const res = await fetch(`https://server-backend-vf5p.onrender.com/api/productFaldas/${id}`, {
       method: "DELETE",
     });
 
