@@ -17,17 +17,19 @@ const Sidebar = () => {
           className="text-gray-700 hover:text-teal-600 hover:bg-gray-100 rounded-md p-2 transition">
           👖 Ingresar pantalones
         </Link>
+
         <Link
           to="admin/ProductManagerBlusas"
           className="text-gray-700 hover:text-teal-600 hover:bg-gray-100 rounded-md p-2 transition">
           👚 Ingresar blusas
         </Link>
-        <a
-          href="#"
-          className="text-gray-700 hover:text-teal-600 hover:bg-gray-100 rounded-md p-2 transition"
-        >
-          🩳 Ingresar faldas
-        </a>
+
+        <Link
+          to="admin/ProductManagerFaldas"
+          className="text-gray-700 hover:text-teal-600 hover:bg-gray-100 rounded-md p-2 transition">
+          🩳 Ingresar Falda
+        </Link>
+
         <a
           href="#"
           className="text-gray-700 hover:text-teal-600 hover:bg-gray-100 rounded-md p-2 transition"
