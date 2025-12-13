@@ -52,7 +52,7 @@ const ProductListBlusas = () => {
 
       <div className="products">
 
-        {productosPantalones.map((p) => (
+        {productosBlusas.map((p) => (
           // Usamos p._id o p.id como clave única (key)
           <div className="product-card" key={p._id || p.id} >
 
