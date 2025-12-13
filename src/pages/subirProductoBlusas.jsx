@@ -11,9 +11,9 @@ const subirProductoBlusas = ({ onProductoAgregado }) => {
     e.preventDefault();
 
     const formData = new FormData();
-    formData.append("nombreblusa", nombreBlusa);
-    formData.append("precioblusa", precioBlusa);
-    formData.append("stockblusa", stockBlusa);
+    formData.append("nombreblusas", nombreBlusa);
+    formData.append("precioblusas", precioBlusa);
+    formData.append("stockblusas", stockBlusa);
     formData.append("imagen", imagenBlusa);
 
     try {
