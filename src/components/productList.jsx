@@ -46,7 +46,7 @@ const ProductList = () => {
   return (
     <section className="main-content">
 
-      ´ <h2 className="title">Productos Disponibles</h2>
+      <h2 className="title">Productos Disponibles</h2>
       {/* Muestra el mensaje de error si existe */}
       {error && <p className="error-message">{error}</p>}
 
