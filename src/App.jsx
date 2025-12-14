@@ -16,6 +16,11 @@ import ProductManagerPantalones from "./layouts/ProductManagerPantalones";
 import ProductListPantalones from "./components/productListPantalones";
 import ProductManagerBlusas from "./layouts/ProductManagerBlusas";
 import ProductListBlusas from "./components/productListBlusas";
+
+import ProductManagerVestidos from "./layouts/ProductManagerVestidos";
+import ProductListVestidos from "./components/productListVestidos";
+
+
 import ProductManagerFaldas from "./layouts/ProductManagerFaldas";
 import ProductListFaldas from "./components/productListFaldas";
 
@@ -70,6 +75,7 @@ function App() {
            <Route path="/productListPantalones" element={<ProductListPantalones />} />
             <Route path="/productListBlusas" element={<ProductListBlusas />} />
             <Route path="/productListFaldas" element={<ProductListFaldas />} />
+            <Route path="/productListVestidos" element={<ProductListVestidos />} />
           <Route path="/login" element={<Login onLogin={handleLogin} />} />
         </Route>
 
@@ -81,6 +87,7 @@ function App() {
             <Route path="/admin/ProductManagerPantalones" element={<ProductManagerPantalones />} />
             <Route path="/admin/ProductManagerBlusas" element={<ProductManagerBlusas />} />
             <Route path="/admin/ProductManagerFaldas" element={<ProductManagerFaldas />} />
+             <Route path="/admin/ProductManagerVestidos" element={<ProductManagerVestidos />} />
           </Route>
         )}
 
