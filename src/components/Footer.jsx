@@ -3,10 +3,10 @@ const Footer = () => {
   return (
     // 1. Contenedor Principal: Color de fondo y espacio
     <footer className="bg-gray-800 text-white mt-10 p-10">
-      
+
       {/* 2. Contenedor Grid Responsivo: 3 Columnas en escritorio, 1 en móvil */}
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
-        
+
         {/* Columna 1: Logo y Descripción (Trendy) */}
         <div>
           <h3 className="text-2xl font-bold mb-4 text-pink-400">ISAELA  COLLECTION</h3>
@@ -32,8 +32,9 @@ const Footer = () => {
             <li>Tel: (0979906565)</li>
             <li>La Gasca, Quito, Ecuador C.A</li>
             <li>Email: isaelacollection@gmail.com</li>
-             <li>facebook: isaelacollection@gmail.com</li>
-              <li>Tiktok: isaela_collections</li>
+            <li>facebook: isaelacollection@gmail.com</li>
+            <li>Tiktok: isaela_collections</li>
+            <li>Pagina web: https://isaela-collections.vercel.app/</li>
             <li>Instagram</li>
           </ul>
         </div>
