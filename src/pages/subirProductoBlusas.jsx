@@ -79,7 +79,7 @@ const subirProductoBlusas = ({ onProductoAgregado }) => {
       </div>
 
       <div>
-        <label className="block text-gray-700 mb-1">imagen Blusa</label>
+        <label className="block text-gray-700 mb-1">Imagen Blusa</label>
         <input
           type="file"
           onChange={(e) => setimagenBlusa(e.target.files[0])}

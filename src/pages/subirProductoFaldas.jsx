@@ -69,7 +69,7 @@ const subirProductoFaldas = ({ onProductoAgregado }) => {
       </div>
 
       <div>
-        <label className="block text-gray-700 mb-1">Stock Blusa</label>
+        <label className="block text-gray-700 mb-1">Stock Falda</label>
         <input
           type="number"
           value={stockFalda}

@@ -37,7 +37,7 @@ const ProductManagerVestidos = () => {
 
       method: "PUT",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ ...p, precio: nuevoPrecio }),
+      body: JSON.stringify({ ...p, precioVestido: nuevoPrecio }),
     });
 
     if (res.ok) {

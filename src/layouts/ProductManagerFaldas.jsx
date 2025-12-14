@@ -24,12 +24,12 @@ const ProductManagerFaldas = () => {
 
   // 🔹 Ver detalles
   const handleDetalles = (p) => {
-    alert(`Detalles del producto:\n\nNombre: ${p.nombre}\nPrecio: ${p.precio}\nStock: ${p.stock}`);
+    alert(`Detalles del producto:\n\nNombre: ${p.nombreFalda}\nPrecio: ${p.precioFalda}\nStock: ${p.stockFalda}`);
   };
 
   // 🔹 Editar producto
   const handleEditar = async (p) => {
-    const nuevoPrecio = prompt(`Nuevo precio para ${p.nombre}:`, p.precio);
+    const nuevoPrecio = prompt(`Nuevo precio para ${p.nombreFalda}:`, p.precioFalda);
     if (nuevoPrecio === null) return;
 //https://server-backend-vf5p.onrender.com
     //const res = await fetch(`http://localhost:5000/api/products/${p._id}`, {
@@ -37,7 +37,7 @@ const ProductManagerFaldas = () => {
 
       method: "PUT",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ ...p, precio: nuevoPrecio }),
+      body: JSON.stringify({ ...p, precioFalda: nuevoPrecio }),
     });
 
     if (res.ok) {
