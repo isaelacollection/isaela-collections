@@ -33,7 +33,7 @@ const Sidebar = () => {
         <Link
           to="admin/ProductManagerVestidos"
           className="text-gray-700 hover:text-teal-600 hover:bg-gray-100 rounded-md p-2 transition">
-          👗 Ingrsar vestidos
+          👗 Ingresar vestidos
         </Link>
     
       </nav>
