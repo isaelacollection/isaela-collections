@@ -55,7 +55,7 @@ const IndiceDeProductos = () => {
 
 
       {/* Tarjeta 5 */}
-      <button className="bg-white rounded-xl shadow-md hover:shadow-xl transition p-4">
+      <button onClick={() => navigate("/productListVestidos")} className="bg-white rounded-xl shadow-md hover:shadow-xl transition p-4">
         <img
           src={Vestidos}
           alt="Blazer 5"
