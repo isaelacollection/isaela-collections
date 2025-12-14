@@ -30,13 +30,12 @@ const Sidebar = () => {
           🩳 Ingresar Falda
         </Link>
 
-        <a
-          href="#"
-          className="text-gray-700 hover:text-teal-600 hover:bg-gray-100 rounded-md p-2 transition"
-        >
+        <Link
+          to="admin/ProductManagerVestidos"
+          className="text-gray-700 hover:text-teal-600 hover:bg-gray-100 rounded-md p-2 transition">
           👗 Ingrsar vestidos
-        </a>
-      
+        </Link>
+    
       </nav>
     </div>
   );
