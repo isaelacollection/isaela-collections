@@ -2,6 +2,7 @@ import Blazers from "../assets/Blazers.jpg";
 import Blusas from "../assets/Blusas.jpg";
 import Faldas from "../assets/Faldas.jpg";
 import Pantalones from "../assets/Pantalones.jpg";
+import Obsequio from "../assets/Obsequio.png";
 import Vestidos from "../assets/Vestidos.jpg";
 import { useNavigate } from "react-router-dom";
 
@@ -76,7 +77,7 @@ const IndiceDeProductos = () => {
             <h3 className="text-xl font-bold mb-2">🎁 Regalo</h3>
             <img
               // Utilizo la imagen de Pantalones como ejemplo para el "Regalo"
-              src={Pantalones}
+              src={Obsequio}
               alt="Regalo por Compra"
               className="w-full h-full object-cover rounded-lg shadow-md"
             />
@@ -85,7 +86,7 @@ const IndiceDeProductos = () => {
           {/* Columna Derecha: Mensaje */}
           <div className="w-full md:w-2/3 p-4 text-center md:text-left">
             <p className="text-2xl font-serif italic text-gray-700">
-              "Por la compra de tu prenda, reclama tu obsequio"
+              "Por la compra de tu prenda, selecciona tu obsequio, blusa, body o top strapless en algodon"
             </p>
           </div>
 
