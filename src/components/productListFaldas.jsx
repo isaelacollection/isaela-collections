@@ -78,7 +78,7 @@ const ProductListFaldas = () => {
 
               {/* Botón de WhatsApp: Clase ajustada a w-1/2 (50% de ancho) */}
               <a
-                href={`https://wa.me/593998694414?text=Hola,%20me%20interesa%20el%20producto:%20${p.nombreFalda}%20que%20vi%20en%20la%20tienda.`}
+                href={`https://wa.me/593979906565?text=Hola,%20me%20interesa%20el%20producto:%20${p.nombreFalda}%20que%20vi%20en%20la%20tienda.`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="
