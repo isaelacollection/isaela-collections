@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { useCarrito } from "../context/CarritoContext";
 import "./productList.css";
 
 const ProductList = () => {
@@ -71,6 +72,12 @@ const ProductList = () => {
             {/** <p className="product-stock">{p.stock ? `Stock: ${p.stock}` : ''}</p>*/}
             <p className="product-stock">{ }</p>
 
+            <button
+              onClick={() => agregarAlCarrito(p)}
+              className="mt-2 w-full bg-pink-500 text-white py-2 rounded"
+            >
+              Añadir 🛒
+            </button>
 
             {/* 🚀 Nueva Sección: Botones de Acción */}
             {/* Contenedor de Acciones: AÑADE ESTAS CLASES */}

@@ -1,5 +1,7 @@
 import { Routes, Route, BrowserRouter } from "react-router-dom";
 import React, { useEffect, useState } from "react";
+import { CarritoProvider } from "./context/CarritoContext";
+
 
 import Home from "./pages/Home";
 import Login from "./pages/Login";
@@ -23,6 +25,8 @@ import ProductListVestidos from "./components/productListVestidos";
 
 import ProductManagerFaldas from "./layouts/ProductManagerFaldas";
 import ProductListFaldas from "./components/productListFaldas";
+
+import Carrito from "./pages/Carrito";
 
 import { useNavigate } from "react-router-dom"; // 🔹 Importa esto arriba
 
@@ -61,6 +65,7 @@ function App() {
   };
 
   return (
+    <CarritoProvider>
     // 💡 CORRECCIÓN CRÍTICA PARA MÓVIL: Añadir 'overflow-x-hidden' y asegurar 'min-h-screen'
     // Esto previene el scroll horizontal causado por elementos que desbordan la pantalla
     <div className="flex flex-col min-h-screen overflow-x-hidden">
@@ -76,6 +81,7 @@ function App() {
             <Route path="/productListBlusas" element={<ProductListBlusas />} />
             <Route path="/productListFaldas" element={<ProductListFaldas />} />
             <Route path="/productListVestidos" element={<ProductListVestidos />} />
+            <Route path="/carrito" element={<Carrito />} />
           <Route path="/login" element={<Login onLogin={handleLogin} />} />
         </Route>
 
@@ -97,6 +103,7 @@ function App() {
 
       <Footer />
      </div >
+     </CarritoProvider >
   );
 }
 

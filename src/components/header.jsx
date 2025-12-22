@@ -1,6 +1,7 @@
 // Header.jsx
 import React from "react";
 import { Link } from "react-router-dom";
+import { useCarrito } from "../context/CarritoContext";
 
 const Header = ({ cerrarSesion, rol }) => {
   return (
@@ -59,6 +60,7 @@ const Header = ({ cerrarSesion, rol }) => {
 
         {/* Icono de carrito */}
         <div className="relative">
+          <Link to="/carrito" className="relative">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             className="w-6 h-6 text-teal-500 cursor-pointer hover:text-teal-700 transition-transform duration-200 hover:scale-110"
@@ -73,9 +75,12 @@ const Header = ({ cerrarSesion, rol }) => {
               d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"
             />
           </svg>
+          {carrito.length > 0 && (
           <span className="absolute -top-2 -right-2 bg-teal-500 text-white text-xs font-bold rounded-full w-4 h-4 flex items-center justify-center">
-            0
+            {carrito.length}
           </span>
+          )}
+           </Link>
         </div>
       </nav>
     </header>
