@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { useCarrito } from "../context/CarritoContext";
 
 const Header = ({ cerrarSesion, rol }) => {
+  const { carrito } = useCarrito();
   return (
     <header className="bg-white shadow-md px-6 py-3 flex justify-between items-center">
       <h1 className="text-2xl font-bold tracking-wide">
