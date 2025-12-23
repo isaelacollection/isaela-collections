@@ -66,8 +66,8 @@ function App() {
 
   return (
     <CarritoProvider>
-    // 💡 CORRECCIÓN CRÍTICA PARA MÓVIL: Añadir 'overflow-x-hidden' y asegurar 'min-h-screen'
-    // Esto previene el scroll horizontal causado por elementos que desbordan la pantalla
+     {/*// 💡 CORRECCIÓN CRÍTICA PARA MÓVIL: Añadir 'overflow-x-hidden' y asegurar 'min-h-screen'
+    // Esto previene el scroll horizontal causado por elementos que desbordan la pantalla*/}
     <div className="flex flex-col min-h-screen overflow-x-hidden">
       {/* 🔹 Header y Footer estarán siempre visibles */ }
       <Header rol={rol} cerrarSesion={cerrarSesion} />
