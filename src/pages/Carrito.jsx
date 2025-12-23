@@ -22,7 +22,7 @@ const Carrito = () => {
           </div>
 
           <button
-            onClick={() => quitarProducto(p.id)}
+            onClick={() => quitarProducto(p._id)}
             className="text-red-600"
           >
             ❌

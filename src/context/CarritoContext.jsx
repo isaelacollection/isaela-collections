@@ -12,30 +12,38 @@ export const CarritoProvider = ({ children }) => {
     localStorage.setItem("carrito", JSON.stringify(carrito));
   }, [carrito]);
 
- const agregarAlCarrito = (producto) => {
-  if (!producto.precio) {
-    alert("Producto sin precio");
-    return;
-  }
-
+const agregarAlCarrito = (producto) => {
   setCarrito(prev => {
-    const existe = prev.find(p => p._id === producto._id);
+    const id = producto._id;
+
+    const existe = prev.find(p => p._id === id);
 
     if (existe) {
       return prev.map(p =>
-        p._id === producto._id
+        p._id === id
           ? { ...p, cantidad: p.cantidad + 1 }
           : p
       );
     }
 
-    return [...prev, { ...producto, cantidad: 1 }];
+    return [
+      ...prev,
+      {
+        _id: id,
+        nombre: producto.nombre,
+        precio: producto.precio,
+        image: producto.image,
+        cantidad: 1
+      }
+    ];
   });
 };
 
-  const quitarProducto = (id) => {
-    setCarrito(prev => prev.filter(p => p.id !== id));
-  };
+
+  const quitarProducto = (_id) => {
+  setCarrito(prev => prev.filter(p => p._id !== _id));
+};
+
 
   const vaciarCarrito = () => setCarrito([]);
 
