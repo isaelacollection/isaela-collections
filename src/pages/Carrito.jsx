@@ -6,6 +6,22 @@ const Carrito = () => {
   if (carrito.length === 0) {
     return <p className="text-center mt-10">Carrito vacío 🛒</p>;
   }
+  //funcion para realizar la venta por whatsapp
+  const generarMensajeWhatsApp = (carrito, total) => {
+    let mensaje = "Hola Isaela Collection 👗✨%0A";
+    mensaje += "Quiero realizar este pedido:%0A%0A";
+
+    carrito.forEach(p => {
+      mensaje += `- ${p.nombre} (${p.cantidad} x $${p.precio})%0A`;
+    });
+
+    mensaje += `%0A💰 Total: $${total}`;
+
+    return mensaje;
+  };
+
+
+
 
   return (
     <div className="max-w-3xl mx-auto p-4">
@@ -33,6 +49,19 @@ const Carrito = () => {
       <div className="text-right font-bold text-xl">
         Total: ${total}
       </div>
+
+      <a
+        href={`https://wa.me/593979906565?text=${generarMensajeWhatsApp(carrito, total)}`}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="bg-green-600 text-white px-6 py-3 rounded text-lg"
+      >
+        🧾 Finalizar pedido por WhatsApp
+      </a>
+
+
+
+
     </div>
   );
 };
