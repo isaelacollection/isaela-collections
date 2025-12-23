@@ -12,26 +12,26 @@ export const CarritoProvider = ({ children }) => {
     localStorage.setItem("carrito", JSON.stringify(carrito));
   }, [carrito]);
 
-  const agregarAlCarrito = (producto) => {
-    setCarrito(prev => {
-      const id = producto._id || producto.id;
+ const agregarAlCarrito = (producto) => {
+  if (!producto.precio) {
+    alert("Producto sin precio");
+    return;
+  }
 
-      const existe = prev.find(p => p.id === id);
-      if (existe) {
-        return prev.map(p =>
-          p.id === id
-            ? { ...p, cantidad: p.cantidad + 1 }
-            : p
-        );
-      }
-      return [...prev, 
-        { id,
-        nombre: producto.nombre,
-        precio: producto.precio,
-        image: producto.image,
-        cantidad: 1 }];
-    });
-  };
+  setCarrito(prev => {
+    const existe = prev.find(p => p._id === producto._id);
+
+    if (existe) {
+      return prev.map(p =>
+        p._id === producto._id
+          ? { ...p, cantidad: p.cantidad + 1 }
+          : p
+      );
+    }
+
+    return [...prev, { ...producto, cantidad: 1 }];
+  });
+};
 
   const quitarProducto = (id) => {
     setCarrito(prev => prev.filter(p => p.id !== id));
