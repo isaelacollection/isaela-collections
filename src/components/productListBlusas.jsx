@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { useCarrito } from "../context/CarritoContext";
 
 import "./productList.css";
 
@@ -6,6 +7,7 @@ const ProductListBlusas = () => {
   const [productosBlusas, setProductosBlusas] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const { agregarAlCarrito } = useCarrito();
 
   useEffect(() => {
     const fetchProductos = async () => {
@@ -47,7 +49,7 @@ const ProductListBlusas = () => {
   return (
     <section className="main-content">
 
-       <h2 className="title">Productos(Blusas) Disponibles</h2>
+      <h2 className="title">Productos(Blusas) Disponibles</h2>
       {/* Muestra el mensaje de error si existe */}
       {error && <p className="error-message">{error}</p>}
 
@@ -71,6 +73,23 @@ const ProductListBlusas = () => {
             {/* Muestra el stock si está disponible, o un espacio vacío si no lo está */}
             {/** <p className="product-stock">{p.stock ? `Stock: ${p.stock}` : ''}</p>*/}
             <p className="product-stock">{ }</p>
+
+
+
+            <button
+              onClick={() => agregarAlCarrito({
+                _id: p._id,
+                nombre: p.nombreBlusa,
+                precio: p.precioBlusa,
+
+              })
+
+              }
+              className="mt-2 w-full bg-pink-500 text-white py-2 rounded"
+            >
+              Añadir 🛒
+            </button>
+
 
 
             {/* 🚀 Nueva Sección: Botones de Acción */}
