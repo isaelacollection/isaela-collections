@@ -74,7 +74,14 @@ const ProductListPantalones = () => {
             <p className="product-stock">{ }</p>
 
             <button
-              onClick={() => agregarAlCarrito(p)}
+              onClick={() => agregarAlCarrito({
+                _id: p._id,
+                nombre: p.nombrePantalon,
+                precio: p.precioPantalon,
+             
+              })
+
+              }
               className="mt-2 w-full bg-pink-500 text-white py-2 rounded"
             >
               Añadir 🛒
