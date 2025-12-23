@@ -1,10 +1,12 @@
 import { useState, useEffect } from "react";
+import { useCarrito } from "../context/CarritoContext";
 import "./productList.css";
 
 const ProductListPantalones = () => {
   const [productosPantalones, setProductosPantalones] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const { agregarAlCarrito } = useCarrito();
 
   useEffect(() => {
     const fetchProductos = async () => {
