@@ -6,6 +6,8 @@ const ProductList = () => {
   const [productos, setProductos] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const { agregarAlCarrito } = useCarrito();
+
 
   useEffect(() => {
     const fetchProductos = async () => {
