@@ -16,10 +16,10 @@ export const CarritoProvider = ({ children }) => {
     setCarrito(prev => {
       const id = producto._id || producto.id;
 
-      const existe = prev.find(p => p._id === id);
+      const existe = prev.find(p => p.id === id);
       if (existe) {
         return prev.map(p =>
-          p._id === id
+          p.id === id
             ? { ...p, cantidad: p.cantidad + 1 }
             : p
         );
