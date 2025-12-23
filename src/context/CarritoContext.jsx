@@ -14,20 +14,27 @@ export const CarritoProvider = ({ children }) => {
 
   const agregarAlCarrito = (producto) => {
     setCarrito(prev => {
-      const existe = prev.find(p => p._id === producto._id);
+      const id = producto._id || producto.id;
+
+      const existe = prev.find(p => p._id === id);
       if (existe) {
         return prev.map(p =>
-          p._id === producto._id
+          p._id === id
             ? { ...p, cantidad: p.cantidad + 1 }
             : p
         );
       }
-      return [...prev, { ...producto, cantidad: 1 }];
+      return [...prev, 
+        { id,
+        nombre: producto.nombre,
+        precio: producto.precio,
+        image: producto.image,
+        cantidad: 1 }];
     });
   };
 
   const quitarProducto = (id) => {
-    setCarrito(carrito.filter(p => p._id !== id));
+    setCarrito(prev => prev.filter(p => p.id !== id));
   };
 
   const vaciarCarrito = () => setCarrito([]);
