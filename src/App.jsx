@@ -5,7 +5,7 @@ import { CarritoProvider } from "./context/CarritoContext";
 
 import Home from "./pages/Home";
 import Login from "./pages/Login";
-import SubirProducto from "./pages/subirProducto";
+
 
 import NotFound from "./pages/NotFound";
 import PublicLayout from "./layouts/PublicLayout";

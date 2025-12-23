@@ -46,7 +46,7 @@ const ProductListPantalones = () => {
   return (
     <section className="main-content">
 
-       <h2 className="title">Productos(pantalones) Disponibles</h2>
+      <h2 className="title">Productos(pantalones) Disponibles</h2>
       {/* Muestra el mensaje de error si existe */}
       {error && <p className="error-message">{error}</p>}
 
@@ -71,6 +71,12 @@ const ProductListPantalones = () => {
             {/** <p className="product-stock">{p.stock ? `Stock: ${p.stock}` : ''}</p>*/}
             <p className="product-stock">{ }</p>
 
+            <button
+              onClick={() => agregarAlCarrito(p)}
+              className="mt-2 w-full bg-pink-500 text-white py-2 rounded"
+            >
+              Añadir 🛒
+            </button>
 
             {/* 🚀 Nueva Sección: Botones de Acción */}
             {/* Contenedor de Acciones: AÑADE ESTAS CLASES */}
