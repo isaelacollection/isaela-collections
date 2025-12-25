@@ -15,8 +15,10 @@ const TablaProductos = ({ productos, onDetalles, onEditar, onEliminar }) => {
         <tbody>
           {productos.map((p) => (
             <tr key={p._id} className="border-t hover:bg-gray-50">
+              <td className="py-2 px-4">{p.categoria}</td>
               <td className="py-2 px-4">{p.nombre}</td>
               <td className="py-2 px-4">${p.precio}</td>
+              <td className="py-2 px-4">{p.detalle}</td>
               <td className="py-2 px-4">{p.stock}</td>
 
               <td className="py-2 px-4">

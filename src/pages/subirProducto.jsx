@@ -1,9 +1,11 @@
 import { useState } from "react";
 
 const SubirProducto = ({ onProductoAgregado }) => {
+  const [categoria, setCategoria] = useState("");
   const [nombre, setNombre] = useState("");
   const [precio, setPrecio] = useState("");
   const [stock, setStock] = useState("");
+  const [detalle, setDetalle] = useState("");
   const [imagen, setImagen] = useState(null);
   const [mensaje, setMensaje] = useState(""); // 👈 nuevo estado para el mensaje
 
@@ -11,6 +13,7 @@ const SubirProducto = ({ onProductoAgregado }) => {
     e.preventDefault();
 
     const formData = new FormData();
+    formData.append("categoria", categoria);
     formData.append("nombre", nombre);
     formData.append("precio", precio);
     formData.append("stock", stock);
@@ -29,9 +32,11 @@ const SubirProducto = ({ onProductoAgregado }) => {
       onProductoAgregado(data); // notificar al padre
 
       // limpiar formulario
+      setCategoria("");
       setNombre("");
       setPrecio("");
       setStock("");
+      setDetalle("");
       setImagen(null);
 
       // mostrar mensaje de éxito
@@ -47,6 +52,17 @@ const SubirProducto = ({ onProductoAgregado }) => {
   return (
     <form onSubmit={handleSubmit} className="p-4 bg-white rounded-lg shadow-md space-y-4">
       <h2 className="text-lg font-semibold text-gray-800">Agregar Producto</h2>
+
+      <div>
+        <label className="block text-gray-700 mb-1">Categoria</label>
+        <input
+          type="text"
+          value={categoria}
+          onChange={(e) => setCategoria(e.target.value)}
+          className="w-full border rounded-md p-2"
+        />
+      </div>
+
 
       <div>
         <label className="block text-gray-700 mb-1">Nombre</label>
@@ -77,6 +93,17 @@ const SubirProducto = ({ onProductoAgregado }) => {
           className="w-full border rounded-md p-2"
         />
       </div>
+
+      <div>
+        <label className="block text-gray-700 mb-1">Detalle</label>
+        <input
+          type="text"
+          value={detalle}
+          onChange={(e) => setNombre(e.target.value)}
+          className="w-full border rounded-md p-2"
+        />
+      </div>
+
 
       <div>
         <label className="block text-gray-700 mb-1">Imagen</label>
