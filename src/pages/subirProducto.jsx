@@ -17,6 +17,7 @@ const SubirProducto = ({ onProductoAgregado }) => {
     formData.append("nombre", nombre);
     formData.append("precio", precio);
     formData.append("stock", stock);
+    formData.append("detalle", detalle);
     formData.append("imagen", imagen);
 
     try {
