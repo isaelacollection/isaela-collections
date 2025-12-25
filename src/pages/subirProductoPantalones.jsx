@@ -1,9 +1,11 @@
 import { useState } from "react";
 
 const subirProductoPantalones = ({ onProductoAgregado }) => {
+  const [categoriaPantalon, setcategoriaPantalon] = useState("");
   const [nombrePantalon, setnombrePantalon] = useState("");
   const [precioPantalon, setprecioPantalon] = useState("");
   const [stockPantalon, setstockPantalon] = useState("");
+  const [detallePantalon, setdetallePantalon] = useState("");
   const [imagenPantalon, setimagenPantalon] = useState(null);
   const [mensaje, setMensaje] = useState(""); // 👈 nuevo estado para el mensaje
 
@@ -11,9 +13,11 @@ const subirProductoPantalones = ({ onProductoAgregado }) => {
     e.preventDefault();
 
     const formData = new FormData();
+    formData.append("categoriaPantalon", categoriaPantalon);
     formData.append("nombrePantalon", nombrePantalon);
     formData.append("precioPantalon", precioPantalon);
     formData.append("stockPantalon", stockPantalon);
+    formData.append("detallePantalon", detallePantalon);
     formData.append("imagen", imagenPantalon);
 
     try {
@@ -27,18 +31,20 @@ const subirProductoPantalones = ({ onProductoAgregado }) => {
 
       const data = await res.json();
       onProductoAgregado(data); // notificar al padre
-      
+
       // limpiar formulario
+      setcategoriaPantalon("");
       setnombrePantalon("");
       setprecioPantalon("");
       setstockPantalon("");
+      setdetallePantalon("");
       setimagenPantalon(null);
 
       // mostrar mensaje de éxito
       setMensaje("✅ Producto creado con éxito");
       // borrar mensaje después de 3 segundos
       setTimeout(() => setMensaje(""), 3000);
-      
+
     } catch (err) {
       console.error(err);
     }
@@ -46,10 +52,21 @@ const subirProductoPantalones = ({ onProductoAgregado }) => {
 
   return (
     <form onSubmit={handleSubmit} className="p-4 bg-white rounded-lg shadow-md space-y-4">
-      <h2 className="text-lg font-semibold text-gray-800">Agregar Producto</h2>
+      <h2 className="text-lg font-semibold text-gray-800">Agregar Pantalon</h2>
 
       <div>
-        <label className="block text-gray-700 mb-1">nombrePantalon pantalon</label>
+        <label className="block text-gray-700 mb-1">Categoria pantalon</label>
+        <input
+          type="text"
+          value={categoriaPantalon}
+          onChange={(e) => setcategoriaPantalon(e.target.value)}
+          className="w-full border rounded-md p-2"
+        />
+      </div>
+
+
+      <div>
+        <label className="block text-gray-700 mb-1">Nombre pantalon</label>
         <input
           type="text"
           value={nombrePantalon}
@@ -59,7 +76,7 @@ const subirProductoPantalones = ({ onProductoAgregado }) => {
       </div>
 
       <div>
-        <label className="block text-gray-700 mb-1">precioPantalon pantalon</label>
+        <label className="block text-gray-700 mb-1">Precio pantalon</label>
         <input
           type="number"
           value={precioPantalon}
@@ -79,7 +96,18 @@ const subirProductoPantalones = ({ onProductoAgregado }) => {
       </div>
 
       <div>
-        <label className="block text-gray-700 mb-1">imagenPantalon pantalon</label>
+        <label className="block text-gray-700 mb-1">detalle Pantalon</label>
+        <input
+          type="text"
+          value={detallePantalon}
+          onChange={(e) => setdetallePantalon(e.target.value)}
+          className="w-full border rounded-md p-2"
+        />
+      </div>
+
+
+      <div>
+        <label className="block text-gray-700 mb-1">imagen pantalon</label>
         <input
           type="file"
           onChange={(e) => setimagenPantalon(e.target.files[0])}
