@@ -99,7 +99,7 @@ const SubirProducto = ({ onProductoAgregado }) => {
         <input
           type="text"
           value={detalle}
-          onChange={(e) => setNombre(e.target.value)}
+          onChange={(e) => setDetalle(e.target.value)}
           className="w-full border rounded-md p-2"
         />
       </div>
