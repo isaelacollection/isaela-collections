@@ -1,9 +1,11 @@
 import { useState } from "react";
 
 const subirProductoFaldas = ({ onProductoAgregado }) => {
+  const [categoriaFalda, setcategoriaFalda] = useState("");
   const [nombreFalda, setnombreFalda] = useState("");
   const [precioFalda, setprecioFalda] = useState("");
   const [stockFalda, setstockFalda] = useState("");
+  const [detalleFalda, setdetalleFalda] = useState("");
   const [imagenFalda, setimagenFalda] = useState(null);
   const [mensaje, setMensaje] = useState(""); // 👈 nuevo estado para el mensaje
 
@@ -11,9 +13,11 @@ const subirProductoFaldas = ({ onProductoAgregado }) => {
     e.preventDefault();
 
     const formData = new FormData();
+    formData.append("categoriaFalda", categoriaFalda);
     formData.append("nombreFalda", nombreFalda);
     formData.append("precioFalda", precioFalda);
     formData.append("stockFalda", stockFalda);
+    formData.append("detalleFalda", detalleFalda);
     formData.append("imagen", imagenFalda);
 
     try {
@@ -27,18 +31,20 @@ const subirProductoFaldas = ({ onProductoAgregado }) => {
 
       const data = await res.json();
       onProductoAgregado(data); // notificar al padre
-      
+
       // limpiar formulario
+      setcategoriaFalda("");
       setnombreFalda("");
       setprecioFalda("");
       setstockFalda("");
+      setdetalleFalda("");
       setimagenFalda(null);
 
       // mostrar mensaje de éxito
       setMensaje("✅ Producto creado con éxito");
       // borrar mensaje después de 3 segundos
       setTimeout(() => setMensaje(""), 3000);
-      
+
     } catch (err) {
       console.error(err);
     }
@@ -47,6 +53,17 @@ const subirProductoFaldas = ({ onProductoAgregado }) => {
   return (
     <form onSubmit={handleSubmit} className="p-4 bg-white rounded-lg shadow-md space-y-4">
       <h2 className="text-lg font-semibold text-gray-800">Agregar Producto Faldas</h2>
+
+
+      <div>
+        <label className="block text-gray-700 mb-1">Categoria</label>
+        <input
+          type="text"
+          value={categoriaFalda}
+          onChange={(e) => setcategoriaFalda(e.target.value)}
+          className="w-full border rounded-md p-2"
+        />
+      </div>
 
       <div>
         <label className="block text-gray-700 mb-1">Nombre Falda</label>
@@ -74,6 +91,16 @@ const subirProductoFaldas = ({ onProductoAgregado }) => {
           type="number"
           value={stockFalda}
           onChange={(e) => setstockFalda(e.target.value)}
+          className="w-full border rounded-md p-2"
+        />
+      </div>
+
+      <div>
+        <label className="block text-gray-700 mb-1">Detalle Falda</label>
+        <input
+          type="text"
+          value={detalleFalda}
+          onChange={(e) => setdetalleFalda(e.target.value)}
           className="w-full border rounded-md p-2"
         />
       </div>

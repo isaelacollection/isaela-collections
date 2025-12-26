@@ -24,7 +24,7 @@ const ProductManagerFaldas = () => {
 
   // 🔹 Ver detalles
   const handleDetalles = (p) => {
-    alert(`Detalles del producto:\n\nNombre: ${p.nombreFalda}\nPrecio: ${p.precioFalda}\nStock: ${p.stockFalda}`);
+    alert(`Detalles del producto:\n\nCategoria: ${p.categoriaFalda}\nNombre: ${p.nombreFalda}\nPrecio: ${p.precioFalda}\n\nStock: ${p.stockFalda}Detalle: ${p.detalleFalda}`);
   };
 
   // 🔹 Editar producto
