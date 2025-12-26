@@ -54,13 +54,20 @@ const subirProductoBlusas = ({ onProductoAgregado }) => {
     <form onSubmit={handleSubmit} className="p-4 bg-white rounded-lg shadow-md space-y-4">
       <h2 className="text-lg font-semibold text-gray-800">Agregar Producto Blusa</h2>
       <div>
-        <label className="block text-gray-700 mb-1">Categoria Blusa</label>
-        <input
-          type="text"
+        <label className="block text-gray-700 mb-1">Categoria</label>
+        <select
           value={categoriaBlusa}
           onChange={(e) => setcategoriaBlusa(e.target.value)}
           className="w-full border rounded-md p-2"
-        />
+        >
+          <option value="">Seleccione una categoría</option>
+          <option value="Blazers">Blazer</option>
+          <option value="Pantalon">Pantalon</option>
+          <option value="Blusa">Blusa</option>
+          <option value="Falda">Falda</option>
+          <option value="Vestido">Vestido</option>
+        </select>
+
       </div>
 
       <div>
