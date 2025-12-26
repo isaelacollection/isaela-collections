@@ -52,10 +52,10 @@ const subirProductoPantalones = ({ onProductoAgregado }) => {
 
   return (
     <form onSubmit={handleSubmit} className="p-4 bg-white rounded-lg shadow-md space-y-4">
-      <h2 className="text-lg font-semibold text-gray-800">Agregar Pantalon</h2>
+      <h2 className="text-lg font-semibold text-gray-800">Agregar Prenda</h2>
 
       <div>
-        <label className="block text-gray-700 mb-1">Categoria pantalon</label>
+        <label className="block text-gray-700 mb-1">Categoria</label>
         <select
           value={categoriaPantalon}
           onChange={(e) => setcategoriaPantalon(e.target.value)}
@@ -73,7 +73,7 @@ const subirProductoPantalones = ({ onProductoAgregado }) => {
 
 
       <div>
-        <label className="block text-gray-700 mb-1">Nombre pantalon</label>
+        <label className="block text-gray-700 mb-1">Nombre</label>
         <input
           type="text"
           value={nombrePantalon}
@@ -83,7 +83,7 @@ const subirProductoPantalones = ({ onProductoAgregado }) => {
       </div>
 
       <div>
-        <label className="block text-gray-700 mb-1">Precio pantalon</label>
+        <label className="block text-gray-700 mb-1">Precio</label>
         <input
           type="number"
           value={precioPantalon}
@@ -93,7 +93,7 @@ const subirProductoPantalones = ({ onProductoAgregado }) => {
       </div>
 
       <div>
-        <label className="block text-gray-700 mb-1">stockPantalon pantalon</label>
+        <label className="block text-gray-700 mb-1">Stock</label>
         <input
           type="number"
           value={stockPantalon}
@@ -103,7 +103,7 @@ const subirProductoPantalones = ({ onProductoAgregado }) => {
       </div>
 
       <div>
-        <label className="block text-gray-700 mb-1">detalle Pantalon</label>
+        <label className="block text-gray-700 mb-1">Detalle</label>
         <input
           type="text"
           value={detallePantalon}
@@ -114,7 +114,7 @@ const subirProductoPantalones = ({ onProductoAgregado }) => {
 
 
       <div>
-        <label className="block text-gray-700 mb-1">imagen pantalon</label>
+        <label className="block text-gray-700 mb-1">Imagen</label>
         <input
           type="file"
           onChange={(e) => setimagenPantalon(e.target.files[0])}
