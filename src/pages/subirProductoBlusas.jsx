@@ -52,7 +52,7 @@ const subirProductoBlusas = ({ onProductoAgregado }) => {
 
   return (
     <form onSubmit={handleSubmit} className="p-4 bg-white rounded-lg shadow-md space-y-4">
-      <h2 className="text-lg font-semibold text-gray-800">Agregar Producto Blusa</h2>
+      <h2 className="text-lg font-semibold text-gray-800">Agregar Prenda</h2>
       <div>
         <label className="block text-gray-700 mb-1">Categoria</label>
         <select
@@ -71,7 +71,7 @@ const subirProductoBlusas = ({ onProductoAgregado }) => {
       </div>
 
       <div>
-        <label className="block text-gray-700 mb-1">Nombre Blusa</label>
+        <label className="block text-gray-700 mb-1">Nombre</label>
         <input
           type="text"
           value={nombreBlusa}
@@ -81,7 +81,7 @@ const subirProductoBlusas = ({ onProductoAgregado }) => {
       </div>
 
       <div>
-        <label className="block text-gray-700 mb-1">Precio Blusa</label>
+        <label className="block text-gray-700 mb-1">Precio</label>
         <input
           type="number"
           value={precioBlusa}
@@ -91,7 +91,7 @@ const subirProductoBlusas = ({ onProductoAgregado }) => {
       </div>
 
       <div>
-        <label className="block text-gray-700 mb-1">Stock Blusa</label>
+        <label className="block text-gray-700 mb-1">Stock</label>
         <input
           type="number"
           value={stockBlusa}
@@ -101,7 +101,7 @@ const subirProductoBlusas = ({ onProductoAgregado }) => {
       </div>
 
       <div>
-        <label className="block text-gray-700 mb-1">Detalle Blusa</label>
+        <label className="block text-gray-700 mb-1">Detalle</label>
         <input
           type="text"
           value={detalleBlusa}
@@ -111,7 +111,7 @@ const subirProductoBlusas = ({ onProductoAgregado }) => {
       </div>
 
       <div>
-        <label className="block text-gray-700 mb-1">Imagen Blusa</label>
+        <label className="block text-gray-700 mb-1">Imagen</label>
         <input
           type="file"
           onChange={(e) => setimagenBlusa(e.target.files[0])}
