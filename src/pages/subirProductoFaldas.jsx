@@ -57,12 +57,19 @@ const subirProductoFaldas = ({ onProductoAgregado }) => {
 
       <div>
         <label className="block text-gray-700 mb-1">Categoria</label>
-        <input
-          type="text"
+        <select
           value={categoriaFalda}
           onChange={(e) => setcategoriaFalda(e.target.value)}
           className="w-full border rounded-md p-2"
-        />
+        >
+          <option value="">Seleccione una categoría</option>
+          <option value="Blazers">Blazer</option>
+          <option value="Pantalon">Pantalon</option>
+          <option value="Blusa">Blusa</option>
+          <option value="Falda">Falda</option>
+          <option value="Vestido">Vestido</option>
+        </select>
+
       </div>
 
       <div>
