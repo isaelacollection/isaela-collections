@@ -24,7 +24,7 @@ const ProductManagerBlusas = () => {
 
   // 🔹 Ver detalles
   const handleDetalles = (p) => {
-    alert(`Detalles del producto:\n\nNombre: ${p.nombreBlusa}\nPrecio: ${p.precioBlusa}\nStock: ${p.stockBlusa}`);
+    alert(`Detalles del producto:\n\nCategoria: ${p.categoriaBlusa}\nNombre: ${p.nombreBlusa}\nPrecio: ${p.precioBlusa}\nStock: ${p.stockBlusa}\nDetalle: ${p.detalleBlusa}`);
   };
 
   // 🔹 Editar producto

@@ -1,9 +1,11 @@
 import { useState } from "react";
 
 const subirProductoBlusas = ({ onProductoAgregado }) => {
+  const [categoriaBlusa, setcategoriaBlusa] = useState("");
   const [nombreBlusa, setnombreBlusa] = useState("");
   const [precioBlusa, setprecioBlusa] = useState("");
   const [stockBlusa, setstockBlusa] = useState("");
+  const [detalleBlusa, setdetalleBlusa] = useState("");
   const [imagenBlusa, setimagenBlusa] = useState(null);
   const [mensaje, setMensaje] = useState(""); // 👈 nuevo estado para el mensaje
 
@@ -11,9 +13,11 @@ const subirProductoBlusas = ({ onProductoAgregado }) => {
     e.preventDefault();
 
     const formData = new FormData();
+    formData.append("categoriaBlusa", categoriaBlusa);
     formData.append("nombreBlusa", nombreBlusa);
     formData.append("precioBlusa", precioBlusa);
     formData.append("stockBlusa", stockBlusa);
+    formData.append("categoriaBlusa", categoriaBlusa);
     formData.append("imagen", imagenBlusa);
 
     try {
@@ -27,18 +31,20 @@ const subirProductoBlusas = ({ onProductoAgregado }) => {
 
       const data = await res.json();
       onProductoAgregado(data); // notificar al padre
-      
+
       // limpiar formulario
+      setcategoriaBlusa("");
       setnombreBlusa("");
       setprecioBlusa("");
       setstockBlusa("");
+      setdetalleBlusa("");
       setimagenBlusa(null);
 
       // mostrar mensaje de éxito
       setMensaje("✅ Producto creado con éxito");
       // borrar mensaje después de 3 segundos
       setTimeout(() => setMensaje(""), 3000);
-      
+
     } catch (err) {
       console.error(err);
     }
@@ -47,6 +53,15 @@ const subirProductoBlusas = ({ onProductoAgregado }) => {
   return (
     <form onSubmit={handleSubmit} className="p-4 bg-white rounded-lg shadow-md space-y-4">
       <h2 className="text-lg font-semibold text-gray-800">Agregar Producto Blusa</h2>
+      <div>
+        <label className="block text-gray-700 mb-1">Categoria Blusa</label>
+        <input
+          type="text"
+          value={categoriaBlusa}
+          onChange={(e) => setcategoriaBlusa(e.target.value)}
+          className="w-full border rounded-md p-2"
+        />
+      </div>
 
       <div>
         <label className="block text-gray-700 mb-1">Nombre Blusa</label>
@@ -74,6 +89,16 @@ const subirProductoBlusas = ({ onProductoAgregado }) => {
           type="number"
           value={stockBlusa}
           onChange={(e) => setstockBlusa(e.target.value)}
+          className="w-full border rounded-md p-2"
+        />
+      </div>
+
+      <div>
+        <label className="block text-gray-700 mb-1">Detalle Blusa</label>
+        <input
+          type="text"
+          value={detalleBlusa}
+          onChange={(e) => setdetalleBlusa(e.target.value)}
           className="w-full border rounded-md p-2"
         />
       </div>
