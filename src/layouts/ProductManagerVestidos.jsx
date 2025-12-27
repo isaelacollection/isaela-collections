@@ -24,7 +24,7 @@ const ProductManagerVestidos = () => {
 
   // 🔹 Ver detalles
   const handleDetalles = (p) => {
-    alert(`Detalles del producto:\n\nNombre: ${p.nombreVestido}\nPrecio: ${p.precioVestido}\nStock: ${p.stockVestido}`);
+    alert(`Detalles del producto:\n\nCategoria: ${p.categoriaVestido}\n\nNombre: ${p.nombreVestido}\nPrecio: ${p.precioVestido}\nStock: ${p.stockVestido}\ndetalle: ${p.detalleVestido}`);
   };
 
   // 🔹 Editar producto

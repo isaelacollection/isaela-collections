@@ -4,6 +4,7 @@ const TablaProductosVestidos = ({ productos, onDetalles, onEditar, onEliminar })
       <table className="min-w-full border border-gray-300 bg-white rounded-lg shadow-md">
         <thead className="bg-gray-100">
           <tr>
+            <th className="py-2 px-4 text-left">Categoria</th>
             <th className="py-2 px-4 text-left">Nombre</th>
             <th className="py-2 px-4 text-left">Precio</th>
             <th className="py-2 px-4 text-left">Stock</th>
@@ -15,6 +16,7 @@ const TablaProductosVestidos = ({ productos, onDetalles, onEditar, onEliminar })
         <tbody>
           {productos.map((p) => (
             <tr key={p._id} className="border-t hover:bg-gray-50">
+              <td className="py-2 px-4">{p.categoriaVestido}</td>
               <td className="py-2 px-4">{p.nombreVestido}</td>
               <td className="py-2 px-4">${p.precioVestido}</td>
               <td className="py-2 px-4">{p.stockVestido}</td>
