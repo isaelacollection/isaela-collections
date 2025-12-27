@@ -22,7 +22,7 @@ const IndiceDeProductos = () => {
             alt="Blazer 1"
             className="w-full h-48 object-cover rounded-lg"
           />
-          <h3 className="text-center mt-2 font-semibold">👆 Blazars </h3>
+          <h3 className="text-center mt-2 font-semibold">👆 Blazers </h3>
         </button>
 
         {/* Tarjeta 2 */}
