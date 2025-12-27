@@ -8,7 +8,6 @@ const TablaProductosFaldas = ({ productos, onDetalles, onEditar, onEliminar }) =
             <th className="py-2 px-4 text-left">Nombre</th>
             <th className="py-2 px-4 text-left">Precio</th>
             <th className="py-2 px-4 text-left">Stock</th>
-            <th className="py-2 px-4 text-left">Detalle</th>
             <th className="py-2 px-4 text-left">Imagen</th>
             <th className="py-2 px-4 text-center">Acciones</th>
           </tr>
@@ -21,7 +20,6 @@ const TablaProductosFaldas = ({ productos, onDetalles, onEditar, onEliminar }) =
               <td className="py-2 px-4">{p.nombreFalda}</td>
               <td className="py-2 px-4">${p.precioFalda}</td>
               <td className="py-2 px-4">{p.stockFalda}</td>
-              <td className="py-2 px-4">{p.detalleFalda}</td>
 
               <td className="py-2 px-4">
                 <img

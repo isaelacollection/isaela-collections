@@ -8,7 +8,6 @@ const TablaProductos = ({ productos, onDetalles, onEditar, onEliminar }) => {
             <th className="py-2 px-4 text-left">Nombre</th>
             <th className="py-2 px-4 text-left">Precio</th>
             <th className="py-2 px-4 text-left">Stock</th>
-            <th className="py-2 px-4 text-left">Detalle</th>
             <th className="py-2 px-4 text-left">Imagen</th>
             <th className="py-2 px-4 text-center">Acciones</th>
           </tr>
@@ -21,7 +20,6 @@ const TablaProductos = ({ productos, onDetalles, onEditar, onEliminar }) => {
               <td className="py-2 px-4">{p.nombre}</td>
               <td className="py-2 px-4">${p.precio}</td>
               <td className="py-2 px-4">{p.stock}</td>
-               <td className="py-2 px-4">{p.detalle}</td>
 
               <td className="py-2 px-4">
                 <img
