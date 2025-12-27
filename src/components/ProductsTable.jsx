@@ -20,6 +20,7 @@ const TablaProductos = ({ productos, onDetalles, onEditar, onEliminar }) => {
               <td className="py-2 px-4">{p.nombre}</td>
               <td className="py-2 px-4">${p.precio}</td>
               <td className="py-2 px-4">{p.stock}</td>
+              
 
               <td className="py-2 px-4">
                 <img
