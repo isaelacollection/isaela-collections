@@ -44,6 +44,18 @@ const ProductList = () => {
       </section>
     );
   }
+  // Para ver los detalles
+  const handleViewDetails = (p) => {
+  alert(
+    `🛍️ Detalles del producto\n\n` +
+    `Categoría: ${p.categoria}\n` +
+    `Nombre: ${p.nombre}\n` +
+    `Precio: $${p.precio}\n` +
+    `Stock: ${p.stock ?? "No disponible"}\n\n` +
+    `Detalle:\n${p.detalle ?? "Sin descripción"}`
+  );
+};
+
 
   // Muestra la lista de productos
   return (
@@ -120,7 +132,7 @@ const ProductList = () => {
       ml-2   /* Margen izquierdo */
       border border-gray-300 /* Borde sutil */
     "
-               onClick={() => handleViewDetails(p.id)} 
+               onClick={() => handleViewDetails(p)} 
               >
                 🔍 Detalles
               </button>
