@@ -120,7 +120,7 @@ const ProductList = () => {
       ml-2   /* Margen izquierdo */
       border border-gray-300 /* Borde sutil */
     "
-              // onClick={() => handleViewDetails(p.id)} 
+               onClick={() => handleViewDetails(p.id)} 
               >
                 🔍 Detalles
               </button>
