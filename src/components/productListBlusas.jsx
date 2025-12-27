@@ -51,7 +51,6 @@ const ProductListBlusas = () => {
     `Categoría: ${p.categoriaBlusa}\n` +
     `Nombre: ${p.nombreBlusa}\n` +
     `Precio: $${p.precioBlusa}\n` +
-    `Stock: ${p.stockBlusa ?? "No disponible"}\n\n` +
     `Detalle:\n${p.detalleBlusa ?? "Sin descripción"}`
   );
 };

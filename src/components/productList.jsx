@@ -51,7 +51,6 @@ const ProductList = () => {
     `Categoría: ${p.categoria}\n` +
     `Nombre: ${p.nombre}\n` +
     `Precio: $${p.precio}\n` +
-    `Stock: ${p.stock ?? "No disponible"}\n\n` +
     `Detalle:\n${p.detalle ?? "Sin descripción"}`
   );
 };

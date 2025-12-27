@@ -49,7 +49,6 @@ const ProductListFaldas = () => {
     `Categoría: ${p.categoriaFalda}\n` +
     `Nombre: ${p.nombreFalda}\n` +
     `Precio: $${p.precioFalda}\n` +
-    `Stock: ${p.stockFalda ?? "No disponible"}\n\n` +
     `Detalle:\n${p.detalleFalda ?? "Sin descripción"}`
   );
 };

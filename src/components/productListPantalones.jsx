@@ -50,7 +50,6 @@ const ProductListPantalones = () => {
     `Categoría: ${p.categoriaPantalon}\n` +
     `Nombre: ${p.nombrePantalon}\n` +
     `Precio: $${p.precioPantalon}\n` +
-    `Stock: ${p.stockPantalon ?? "No disponible"}\n\n` +
     `Detalle:\n${p.detallePantalon ?? "Sin descripción"}`
   );
 };
