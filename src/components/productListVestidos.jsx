@@ -42,6 +42,17 @@ const ProductListVestidos = () => {
       </section>
     );
   }
+ // Para ver los detalles
+  const handleViewDetails = (p) => {
+  alert(
+    `🛍️ Detalles del producto\n\n` +
+    `Categoría: ${p.categoriaVestido}\n` +
+    `Nombre: ${p.nombreVestido}\n` +
+    `Precio: $${p.precioVestido}\n` +
+    `Stock: ${p.stockVestido ?? "No disponible"}\n\n` +
+    `Detalle:\n${p.detalleVestido ?? "Sin descripción"}`
+  );
+};
 
   // Muestra la lista de productos
   return (
@@ -127,7 +138,7 @@ const ProductListVestidos = () => {
       ml-2   /* Margen izquierdo */
       border border-gray-300 /* Borde sutil */
     "
-              // onClick={() => handleViewDetails(p.id)} 
+               onClick={() => handleViewDetails(p)} 
               >
                 🔍 Detalles
               </button>

@@ -42,6 +42,17 @@ const ProductListFaldas = () => {
       </section>
     );
   }
+ // Para ver los detalles
+  const handleViewDetails = (p) => {
+  alert(
+    `🛍️ Detalles del producto\n\n` +
+    `Categoría: ${p.categoriaFalda}\n` +
+    `Nombre: ${p.nombreFalda}\n` +
+    `Precio: $${p.precioFalda}\n` +
+    `Stock: ${p.stockFalda ?? "No disponible"}\n\n` +
+    `Detalle:\n${p.detalleFalda ?? "Sin descripción"}`
+  );
+};
 
   // Muestra la lista de productos
   return (
@@ -129,7 +140,7 @@ const ProductListFaldas = () => {
       ml-2   /* Margen izquierdo */
       border border-gray-300 /* Borde sutil */
     "
-              // onClick={() => handleViewDetails(p.id)} 
+               onClick={() => handleViewDetails(p)} 
               >
                 🔍 Detalles
               </button>

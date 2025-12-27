@@ -44,6 +44,17 @@ const ProductListBlusas = () => {
       </section>
     );
   }
+ // Para ver los detalles
+  const handleViewDetails = (p) => {
+  alert(
+    `🛍️ Detalles del producto\n\n` +
+    `Categoría: ${p.categoriaBlusa}\n` +
+    `Nombre: ${p.nombreBlusa}\n` +
+    `Precio: $${p.precioBlusa}\n` +
+    `Stock: ${p.stockBlusa ?? "No disponible"}\n\n` +
+    `Detalle:\n${p.detalleBlusa ?? "Sin descripción"}`
+  );
+};
 
   // Muestra la lista de productos
   return (
@@ -131,7 +142,7 @@ const ProductListBlusas = () => {
       ml-2   /* Margen izquierdo */
       border border-gray-300 /* Borde sutil */
     "
-              // onClick={() => handleViewDetails(p.id)} 
+               onClick={() => handleViewDetails(p)} 
               >
                 🔍 Detalles
               </button>
