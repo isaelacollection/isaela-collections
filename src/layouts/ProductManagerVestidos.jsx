@@ -37,7 +37,7 @@ const ProductManagerVestidos = () => {
 
   if (nuevoNombre == null || nuevoPrecio == null || nuevoStock == null || nuevoDetalle == null) return;
 
-  const res = await fetch(`https://server-backend-vf5p.onrender.com/api/products/${p._id}`, {
+  const res = await fetch(`https://server-backend-vf5p.onrender.com/api/productVestidos/${p._id}`, {
     method: "PUT",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
