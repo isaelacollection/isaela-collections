@@ -35,7 +35,7 @@ const ProductManagerBlusas = () => {
   const nuevoDetalle = prompt("Detalle:", p.detalleBlusa);
  
 
-  if (!nuevoNombre || !nuevoPrecio || !nuevoStock) return;
+  if (!nuevoNombre == null || !nuevoPrecio == null || !nuevoStock == null) return;
 
   const res = await fetch(`https://server-backend-vf5p.onrender.com/api/products/${p._id}`, {
     method: "PUT",
