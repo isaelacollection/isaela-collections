@@ -27,26 +27,35 @@ const ProductManagerVestidos = () => {
     alert(`Detalles del producto:\n\nCategoria: ${p.categoriaVestido}\n\nNombre: ${p.nombreVestido}\nPrecio: ${p.precioVestido}\nStock: ${p.stockVestido}\ndetalle: ${p.detalleVestido}`);
   };
 
-  // 🔹 Editar producto
+    // 🔹 Editar producto
   const handleEditar = async (p) => {
-    const nuevoPrecio = prompt(`Nuevo precio para ${p.nombreVestido}:`, p.precioVestido);
-    if (nuevoPrecio === null) return;
-//https://server-backend-vf5p.onrender.com
-    //const res = await fetch(`http://localhost:5000/api/products/${p._id}`, {
-    const res = await fetch(`https://server-backend-vf5p.onrender.com/api/productVestidos/${p._id}`, {
+  const nuevoNombre = prompt("Nombre:", p.nombreVestido);
+  const nuevoPrecio = prompt("Precio:", p.precioVestido);
+  const nuevoStock = prompt("Stock:", p.stockVestido);
+  const nuevoDetalle = prompt("Detalle:", p.detalleVestido);
+ 
 
-      method: "PUT",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ ...p, precioVestido: nuevoPrecio }),
-    });
+  if (!nuevoNombre || !nuevoPrecio || !nuevoStock) return;
 
-    if (res.ok) {
-      const actualizado = await res.json();
-      setProductos((prev) =>
-        prev.map((prod) => (prod._id === actualizado._id ? actualizado : prod))
-      );
-    }
-  };
+  const res = await fetch(`https://server-backend-vf5p.onrender.com/api/products/${p._id}`, {
+    method: "PUT",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      nombre: nuevoNombre,
+      precio: nuevoPrecio,
+      stock: nuevoStock,
+      detalle: nuevoDetalle,
+      
+    }),
+  });
+
+  if (res.ok) {
+    const actualizado = await res.json();
+    setProductos((prev) =>
+      prev.map((prod) => (prod._id === actualizado._id ? actualizado : prod))
+    );
+  }
+}
 
   // 🔹 Eliminar producto
   const handleEliminar = async (id) => {

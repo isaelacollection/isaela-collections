@@ -27,26 +27,35 @@ const ProductManagerFaldas = () => {
     alert(`Detalles del producto:\n\nCategoria: ${p.categoriaFalda}\nNombre: ${p.nombreFalda}\nPrecio: ${p.precioFalda}\nStock: ${p.stockFalda}\nDetalle: ${p.detalleFalda}`);
   };
 
-  // 🔹 Editar producto
+    // 🔹 Editar producto
   const handleEditar = async (p) => {
-    const nuevoPrecio = prompt(`Nuevo precio para ${p.nombreFalda}:`, p.precioFalda);
-    if (nuevoPrecio === null) return;
-//https://server-backend-vf5p.onrender.com
-    //const res = await fetch(`http://localhost:5000/api/products/${p._id}`, {
-    const res = await fetch(`https://server-backend-vf5p.onrender.com/api/productFaldas/${p._id}`, {
+  const nuevoNombre = prompt("Nombre:", p.nombreFalda);
+  const nuevoPrecio = prompt("Precio:", p.precioFalda);
+  const nuevoStock = prompt("Stock:", p.stockFalda);
+  const nuevoDetalle = prompt("Detalle:", p.detalleFalda);
+ 
 
-      method: "PUT",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ ...p, precioFalda: nuevoPrecio }),
-    });
+  if (!nuevoNombre || !nuevoPrecio || !nuevoStock) return;
 
-    if (res.ok) {
-      const actualizado = await res.json();
-      setProductos((prev) =>
-        prev.map((prod) => (prod._id === actualizado._id ? actualizado : prod))
-      );
-    }
-  };
+  const res = await fetch(`https://server-backend-vf5p.onrender.com/api/products/${p._id}`, {
+    method: "PUT",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      nombre: nuevoNombre,
+      precio: nuevoPrecio,
+      stock: nuevoStock,
+      detalle: nuevoDetalle,
+      
+    }),
+  });
+
+  if (res.ok) {
+    const actualizado = await res.json();
+    setProductos((prev) =>
+      prev.map((prod) => (prod._id === actualizado._id ? actualizado : prod))
+    );
+  }
+}
 
   // 🔹 Eliminar producto
   const handleEliminar = async (id) => {

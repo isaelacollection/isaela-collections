@@ -33,7 +33,7 @@ const ProductManager = () => {
   const nuevoPrecio = prompt("Precio:", p.precio);
   const nuevoStock = prompt("Stock:", p.stock);
   const nuevoDetalle = prompt("Detalle:", p.detalle);
-  const nuevaCategoria = prompt("Categoria:", p.categoria);
+ 
 
   if (!nuevoNombre || !nuevoPrecio || !nuevoStock) return;
 
@@ -45,7 +45,7 @@ const ProductManager = () => {
       precio: nuevoPrecio,
       stock: nuevoStock,
       detalle: nuevoDetalle,
-      categoria: nuevaCategoria,
+      
     }),
   });
 
