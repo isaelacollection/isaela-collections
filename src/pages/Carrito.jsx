@@ -44,7 +44,7 @@ const Carrito = () => {
       // 2️⃣ Crear detalle de venta
       for (const p of carrito) {
         await fetch(
-          "https://server-backend-vf5p.onrender.com/api/detalle-venta",
+          "https://server-backend-vf5p.onrender.com/api/detalleVentas",
           {
             method: "POST",
             headers: { "Content-Type": "application/json" },
