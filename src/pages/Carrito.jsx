@@ -84,7 +84,7 @@ const Carrito = () => {
 
       {carrito.map(p => (
         <div
-          key={p.id}
+          key={p._id}
           className="flex justify-between items-center bg-white p-3 shadow rounded mb-2"
         >
           <div>
@@ -93,7 +93,7 @@ const Carrito = () => {
           </div>
 
           <button
-            onClick={() => quitarProducto(p.id)}
+            onClick={() => quitarProducto(p._id)}
             className="text-red-600 text-xl"
           >
             ❌
