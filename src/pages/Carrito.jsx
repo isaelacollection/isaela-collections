@@ -50,7 +50,7 @@ const Carrito = () => {
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({
               ventaId: venta._id,
-              productoId: p.id,
+              productoId: p._id,
               nombreProducto: p.nombre,
               precioUnitario: p.precio,
               cantidad: p.cantidad,
