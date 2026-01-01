@@ -83,6 +83,33 @@ const IndiceDeProductos = () => {
               className="w-full h-full object-cover rounded-lg shadow-md"
             />
           </div>
+          <div className="w-full md:w-1/3 p-2 flex flex-col items-center">
+            <h3 className="text-xl font-bold mb-2">🎁 Regalo</h3>
+            <img
+              // Utilizo la imagen de Pantalones como ejemplo para el "Regalo"
+              src={CARTADECOLORES}
+              alt="Regalo por Compra"
+              className="w-full h-full object-cover rounded-lg shadow-md"
+            />
+          </div>
+          <div className="w-full md:w-1/3 p-2 flex flex-col items-center">
+            <h3 className="text-xl font-bold mb-2">🎁 Regalo</h3>
+            <img
+              // Utilizo la imagen de Pantalones como ejemplo para el "Regalo"
+              src={CAROLINAHERRERA}
+              alt="Regalo por Compra"
+              className="w-full h-full object-cover rounded-lg shadow-md"
+            />
+          </div>
+          <div className="w-full md:w-1/3 p-2 flex flex-col items-center">
+            <h3 className="text-xl font-bold mb-2">🎁 Regalo</h3>
+            <img
+              // Utilizo la imagen de Pantalones como ejemplo para el "Regalo"
+              src={TURIN}
+              alt="Regalo por Compra"
+              className="w-full h-full object-cover rounded-lg shadow-md"
+            />
+          </div>
 
           {/* Columna Derecha: Mensaje */}
           <div className="w-full md:w-2/3 p-4 text-center md:text-left">
