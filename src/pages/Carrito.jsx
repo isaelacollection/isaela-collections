@@ -51,8 +51,8 @@ const Carrito = () => {
             body: JSON.stringify({
               ventaId: venta._id,
               productoId: p.id,
-              nombre: p.nombre,
-              precio: p.precio,
+              nombreProducto: p.nombre,
+              precioUnitario: p.precio,
               cantidad: p.cantidad,
               subtotal: p.precio * p.cantidad,
             }),
