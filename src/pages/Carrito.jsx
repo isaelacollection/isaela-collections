@@ -1,8 +1,6 @@
 import { useCarrito } from "../context/CarritoContext";
 import { generarFacturaPDF } from "../utils/generarFacturaPDF";
 
-
-
 const Carrito = () => {
   const { carrito, quitarProducto, total, vaciarCarrito } = useCarrito();
 
@@ -11,7 +9,7 @@ const Carrito = () => {
   }
 
   // 📱 Mensaje WhatsApp
-  const generarMensajeWhatsApp = (carrito, total) => {
+  const generarMensajeWhatsApp = () => {
     let mensaje = "Hola Isaela Collection 👗✨%0A";
     mensaje += "Quiero realizar este pedido:%0A%0A";
 
@@ -20,70 +18,67 @@ const Carrito = () => {
     });
 
     mensaje += `%0A💰 Total: $${total}`;
-
     return mensaje;
   };
 
-  // 🧾 CHECKOUT COMPLETO
- const finalizarCompra = async () => {
-  try {
-    // 1️⃣ CREAR LINK WHATSAPP
-    const whatsappURL = `https://wa.me/593979906565?text=${generarMensajeWhatsApp(
-      carrito,
-      total
-    )}`;
-
-    // 🔥 ABRIR WHATSAPP INMEDIATAMENTE (NO BLOQUEADO)
+  // 1️⃣ SOLO INICIAR PEDIDO (WHATSAPP)
+  const iniciarPedidoWhatsApp = () => {
+    const whatsappURL = `https://wa.me/593979906565?text=${generarMensajeWhatsApp()}`;
     window.open(whatsappURL, "_blank");
+  };
 
-    // 2️⃣ Crear venta
-    const ventaRes = await fetch(
-      "https://server-backend-vf5p.onrender.com/api/ventas",
-      {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          clienteId: null,
-          total,
-          metodoPago: "WhatsApp",
-          estado: "pendiente",
-        }),
-      }
-    );
-
-    const venta = await ventaRes.json();
-
-    // 3️⃣ Crear detalle de venta
-    for (const p of carrito) {
-      await fetch(
-        "https://server-backend-vf5p.onrender.com/api/detalleVentas",
+  // 2️⃣ FINALIZAR PEDIDO + FACTURA PDF
+  const finalizarPedidoConFactura = async () => {
+    try {
+      // Crear venta
+      const ventaRes = await fetch(
+        "https://server-backend-vf5p.onrender.com/api/ventas",
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
-            ventaId: venta._id,
-            productoId: p._id,
-            nombreProducto: p.nombre,
-            precioUnitario: p.precio,
-            cantidad: p.cantidad,
-            subtotal: p.precio * p.cantidad,
+            clienteId: null,
+            total,
+            metodoPago: "WhatsApp",
+            estado: "pendiente",
           }),
         }
       );
+
+      const venta = await ventaRes.json();
+
+      // Crear detalle de venta
+      for (const p of carrito) {
+        await fetch(
+          "https://server-backend-vf5p.onrender.com/api/detalleVentas",
+          {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+              ventaId: venta._id,
+              productoId: p._id,
+              nombreProducto: p.nombre,
+              precioUnitario: p.precio,
+              cantidad: p.cantidad,
+              subtotal: p.precio * p.cantidad,
+            }),
+          }
+        );
+      }
+
+      // Generar factura PDF
+      generarFacturaPDF(venta, carrito);
+
+      // Vaciar carrito
+      vaciarCarrito();
+
+      alert("✅ Pedido finalizado y factura generada");
+
+    } catch (error) {
+      console.error("Error al finalizar pedido:", error);
+      alert("❌ Error al finalizar el pedido");
     }
-
-    // 4️⃣ Generar factura PDF (YA SIN BLOQUEO)
-    generarFacturaPDF(venta, carrito);
-
-    // 5️⃣ Vaciar carrito
-    vaciarCarrito();
-
-  } catch (error) {
-    console.error("Error en checkout:", error);
-    alert("❌ Error al procesar la compra");
-  }
-};
-
+  };
 
   return (
     <div className="max-w-3xl mx-auto p-4">
@@ -112,12 +107,22 @@ const Carrito = () => {
         Total: ${total}
       </div>
 
-      <button
-        onClick={finalizarCompra}
-        className="mt-4 bg-green-600 text-white px-6 py-3 rounded text-lg w-full"
-      >
-        🧾 Finalizar pedido por WhatsApp
-      </button>
+      {/* 🔘 BOTONES */}
+      <div className="flex gap-4 mt-6">
+        <button
+          onClick={iniciarPedidoWhatsApp}
+          className="bg-blue-600 text-white px-6 py-3 rounded text-lg w-full"
+        >
+          📱 Iniciar pedido
+        </button>
+
+        <button
+          onClick={finalizarPedidoConFactura}
+          className="bg-green-600 text-white px-6 py-3 rounded text-lg w-full"
+        >
+          🧾 Finalizar + Factura PDF
+        </button>
+      </div>
     </div>
   );
 };
