@@ -78,7 +78,7 @@ const IndiceDeProductos = () => {
             <h3 className="text-xl font-bold mb-2">🎁 Regalo</h3>
             <img
               // Utilizo la imagen de Pantalones como ejemplo para el "Regalo"
-              src={Obsequio}
+              src={CARTADECOLORES}
               alt="Regalo por Compra"
               className="w-full h-full object-cover rounded-lg shadow-md"
             />
