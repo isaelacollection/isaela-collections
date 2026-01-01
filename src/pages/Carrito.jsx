@@ -1,4 +1,7 @@
 import { useCarrito } from "../context/CarritoContext";
+import { generarFacturaPDF } from "../utils/generarFacturaPDF";
+
+
 
 const Carrito = () => {
   const { carrito, quitarProducto, total, vaciarCarrito } = useCarrito();
@@ -59,6 +62,9 @@ const Carrito = () => {
           }
         );
       }
+
+// 🧾 3️⃣ GENERAR FACTURA PDF  ✅ AQUÍ VA
+    generarFacturaPDF(venta, carrito);
 
       // 3️⃣ Abrir WhatsApp
       window.open(
