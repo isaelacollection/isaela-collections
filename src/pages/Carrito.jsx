@@ -25,64 +25,65 @@ const Carrito = () => {
   };
 
   // 🧾 CHECKOUT COMPLETO
-  const finalizarCompra = async () => {
-    try {
-      // 1️⃣ Crear venta
-      const ventaRes = await fetch(
-        "https://server-backend-vf5p.onrender.com/api/ventas",
+ const finalizarCompra = async () => {
+  try {
+    // 1️⃣ CREAR LINK WHATSAPP
+    const whatsappURL = `https://wa.me/593979906565?text=${generarMensajeWhatsApp(
+      carrito,
+      total
+    )}`;
+
+    // 🔥 ABRIR WHATSAPP INMEDIATAMENTE (NO BLOQUEADO)
+    window.open(whatsappURL, "_blank");
+
+    // 2️⃣ Crear venta
+    const ventaRes = await fetch(
+      "https://server-backend-vf5p.onrender.com/api/ventas",
+      {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          clienteId: null,
+          total,
+          metodoPago: "WhatsApp",
+          estado: "pendiente",
+        }),
+      }
+    );
+
+    const venta = await ventaRes.json();
+
+    // 3️⃣ Crear detalle de venta
+    for (const p of carrito) {
+      await fetch(
+        "https://server-backend-vf5p.onrender.com/api/detalleVentas",
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
-            clienteId: null, // cliente anónimo
-            total,
-            metodoPago: "WhatsApp",
-            estado: "pendiente",
+            ventaId: venta._id,
+            productoId: p._id,
+            nombreProducto: p.nombre,
+            precioUnitario: p.precio,
+            cantidad: p.cantidad,
+            subtotal: p.precio * p.cantidad,
           }),
         }
       );
+    }
 
-      const venta = await ventaRes.json();
-
-      // 2️⃣ Crear detalle de venta
-      for (const p of carrito) {
-        await fetch(
-          "https://server-backend-vf5p.onrender.com/api/detalleVentas",
-          {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({
-              ventaId: venta._id,
-              productoId: p._id,
-              nombreProducto: p.nombre,
-              precioUnitario: p.precio,
-              cantidad: p.cantidad,
-              subtotal: p.precio * p.cantidad,
-            }),
-          }
-        );
-      }
-
-// 🧾 3️⃣ GENERAR FACTURA PDF  ✅ AQUÍ VA
+    // 4️⃣ Generar factura PDF (YA SIN BLOQUEO)
     generarFacturaPDF(venta, carrito);
 
-      // 3️⃣ Abrir WhatsApp
-      window.open(
-        `https://wa.me/593979906565?text=${generarMensajeWhatsApp(
-          carrito,
-          total
-        )}`,
-        "_blank"
-      );
+    // 5️⃣ Vaciar carrito
+    vaciarCarrito();
 
-      // 4️⃣ Vaciar carrito
-      vaciarCarrito();
+  } catch (error) {
+    console.error("Error en checkout:", error);
+    alert("❌ Error al procesar la compra");
+  }
+};
 
-    } catch (error) {
-      console.error("Error en checkout:", error);
-      alert("❌ Error al procesar la compra");
-    }
-  };
 
   return (
     <div className="max-w-3xl mx-auto p-4">
