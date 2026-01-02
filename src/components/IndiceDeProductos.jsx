@@ -108,7 +108,7 @@ const IndiceDeProductos = () => {
               <div className="w-full mt-2">
                 <video
                   src={Colores_LemonTree} // importa tu video
-                 className="w-full max-h-72 rounded-xl shadow-lg object-contain bg-black"
+                 className="w-full max-h-72 rounded-xl shadow-lg object-contain bg-white"
                   autoPlay
                   loop
                   muted
