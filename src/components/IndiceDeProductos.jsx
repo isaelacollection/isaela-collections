@@ -7,6 +7,7 @@ import Vestidos from "../assets/Vestidos.jpg";
 import CARTADECOLORES from "../assets/CARTADECOLORES.jpg";
 import CAROLINAHERRERA from "../assets/CAROLINAHERRERA.jpg";
 import TURIN from "../assets/TURIN.jpg";
+import Colores_LemonTree from "../assets/Colores_LemonTree.mp4";
 import { useNavigate } from "react-router-dom";
 
 
@@ -102,6 +103,19 @@ const IndiceDeProductos = () => {
                   o un body de algodón
                 </span>
               </p>
+
+              {/* 🎥 Video del regalo */}
+              <div className="w-full mt-2">
+                <video
+                  src={Colores_LemonTree} // importa tu video
+                  className="w-full max-h-72 rounded-xl shadow-lg object-cover"
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  controls={false}
+                />
+              </div>
 
             </div>
 
