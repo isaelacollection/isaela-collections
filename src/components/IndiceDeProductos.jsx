@@ -94,8 +94,8 @@ const IndiceDeProductos = () => {
               </h2>
 
               <p className="text-xl md:text-2xl font-semibold text-gray-800 leading-relaxed">
-                Por la compra de una prenda recibe de regalo una blusa tipo
-                <span className="text-pink-500 font-bold"> strapless </span>
+                Por la compra de una prenda recibe de regalo 
+                <span className="text-pink-500 font-bold">un top tipo strapless una blusa o </span>
                 o un
                 <span className="text-pink-500 font-bold"> body de algodón</span>.
               </p>
