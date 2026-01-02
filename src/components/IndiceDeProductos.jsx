@@ -5,7 +5,7 @@ import Pantalones from "../assets/Pantalones.jpg";
 import Obsequio from "../assets/Obsequio.png";
 import Vestidos from "../assets/Vestidos.jpg";
 import CARTADECOLORES from "../assets/CARTADECOLORES.jpg";
-import CAROLINAHERRERA from "../assets/CAROLINAHERRERA .jpg";
+import CAROLINAHERRERA from "../assets/CAROLINAHERRERA.jpg";
 import TURIN from "../assets/TURIN.jpg";
 import { useNavigate } from "react-router-dom";
 
