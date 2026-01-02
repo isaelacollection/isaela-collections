@@ -108,7 +108,7 @@ const IndiceDeProductos = () => {
               <div className="w-full mt-2">
                 <video
                   src={Colores_LemonTree} // importa tu video
-                 className="w-full max-h-72 rounded-xl shadow-lg object-contain bg-white"
+                  className="w-full max-h-72 rounded-xl shadow-lg object-contain bg-white"
                   autoPlay
                   loop
                   muted
@@ -121,6 +121,63 @@ const IndiceDeProductos = () => {
 
           </div>
         </div>
+
+        {/*otra seccion */}
+        <div className="w-full mt-8 mb-6">
+          <div className="bg-white rounded-xl shadow-xl p-4 flex flex-col md:flex-row items-center justify-between">
+
+            {/* Columna Izquierda: Imagen de Regalo */}
+            <div className="w-full md:w-1/3 p-2 flex flex-col items-center">
+              <h3 className="text-xl font-bold mb-2">Tipos de telas con las que contamos</h3>
+              <h2 className="text-3xl md:text-4xl font-extrabold text-pink-600 mb-4">
+                ¡Mejor calidad!
+              </h2>
+
+              <p className="text-xl md:text-2xl font-semibold text-gray-800 leading-relaxed">
+                Por la compra de una prenda recibe de regalo
+                <span className="block text-pink-500 font-bold">
+                  un top tipo strapless o una blusa
+                </span>
+                <span className="block text-pink-500 font-bold">
+                  o un body de algodón
+                </span>
+              </p>
+            </div>
+
+            {/* Columna Derecha: Mensaje */}
+            <div className="w-full md:w-2/3 text-center md:text-left">
+              <h2 className="text-3xl md:text-4xl font-extrabold text-pink-600 mb-4">
+                ¡Regalo por tu compra!
+              </h2>
+
+              <p className="text-xl md:text-2xl font-semibold text-gray-800 leading-relaxed">
+                Por la compra de una prenda recibe de regalo
+                <span className="block text-pink-500 font-bold">
+                  un top tipo strapless o una blusa
+                </span>
+                <span className="block text-pink-500 font-bold">
+                  o un body de algodón
+                </span>
+              </p>
+
+              {/* 🎥 Video del regalo */}
+              <div className="w-full mt-2">
+                <video
+                  src={Colores_LemonTree} // importa tu video
+                  className="w-full max-h-72 rounded-xl shadow-lg object-contain bg-white"
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  controls
+                />
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+
 
 
 
