@@ -113,7 +113,7 @@ const IndiceDeProductos = () => {
                   loop
                   muted
                   playsInline
-                  controls={false}
+                  controls
                 />
               </div>
 
