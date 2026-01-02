@@ -134,12 +134,12 @@ const IndiceDeProductos = () => {
               </h2>
 
               <p className="text-xl md:text-2xl font-semibold text-gray-800 leading-relaxed">
-                Por la compra de una prenda recibe de regalo
+                Calidad premiun, Alta resistencia al uso y lavado
                 <span className="block text-pink-500 font-bold">
-                  un top tipo strapless o una blusa
+                  Mantiene su forma y textura
                 </span>
                 <span className="block text-pink-500 font-bold">
-                  o un body de algodón
+                  No hace bolitas (antipilling)
                 </span>
               </p>
             </div>
