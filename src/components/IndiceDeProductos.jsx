@@ -4,9 +4,12 @@ import Faldas from "../assets/Faldas.jpg";
 import Pantalones from "../assets/Pantalones.jpg";
 import Obsequio from "../assets/Obsequio.png";
 import Vestidos from "../assets/Vestidos.jpg";
-import CARTADECOLORES from "../assets/CARTADECOLORES.jpg";
-import CAROLINAHERRERA from "../assets/CAROLINAHERRERA.jpg";
-import TURIN from "../assets/TURIN.jpg";
+
+import anuncio1 from "../assets/anuncio1.jpg";
+import anuncio2 from "../assets/anuncio2.jpg";
+import anuncio3 from "../assets/anuncio3.jpg";
+import anuncio4 from "../assets/anuncio4.jpg";
+
 import Colores_LemonTree from "../assets/Colores_LemonTree.mp4";
 import { useNavigate } from "react-router-dom";
 
@@ -176,6 +179,22 @@ const IndiceDeProductos = () => {
             </div>
 
           </div>
+        </div>
+        {/*seccion del carrucel */}
+        <div class="carousel" className="w-full mt-8 mb-6">
+          <div class="carousel-track">
+            <img src="anuncio1.jpg" alt=""/>
+            <img src="anuncio2.jpg" alt=""/>
+            <img src="anuncio3.jpg" alt=""/>
+            <img src="anuncio4.jpg" alt=""/>
+
+   {/* <!-- Duplicadas para loop infinito -->*/}
+            <img src="anuncio1.jpg" alt=""/>
+            <img src="anuncio2.jpg" alt=""/>
+            <img src="anuncio3.jpg" alt=""/>
+            <img src="anuncio4.jpg" alt=""/>
+         </div>
+
         </div>
 
 
