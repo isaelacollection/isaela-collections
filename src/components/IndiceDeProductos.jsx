@@ -180,8 +180,10 @@ const IndiceDeProductos = () => {
 
           </div>
         </div>
+
+
         {/*seccion del carrucel */}
-        <div class="carousel" className="w-full mt-8 mb-6">
+        <div class="carousel">
           <div class="carousel-track">
             <img src="anuncio1.jpg" alt=""/>
             <img src="anuncio2.jpg" alt=""/>
