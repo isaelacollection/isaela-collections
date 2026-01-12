@@ -4,6 +4,7 @@ import Faldas from "../assets/Faldas.jpg";
 import Pantalones from "../assets/Pantalones.jpg";
 import Obsequio from "../assets/Obsequio.png";
 import Vestidos from "../assets/Vestidos.jpg";
+import "./carrucel.css";
 
 import anuncio1 from "../assets/anuncio1.jpg";
 import anuncio2 from "../assets/anuncio2.jpg";
@@ -190,7 +191,7 @@ const IndiceDeProductos = () => {
             <img src="anuncio3.jpg" alt=""/>
             <img src="anuncio4.jpg" alt=""/>
 
-   {/* <!-- Duplicadas para loop infinito -->*/}
+                   {/* <!-- Duplicadas para loop infinito -->*/}
             <img src="anuncio1.jpg" alt=""/>
             <img src="anuncio2.jpg" alt=""/>
             <img src="anuncio3.jpg" alt=""/>
