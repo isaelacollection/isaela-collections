@@ -4,12 +4,15 @@ import Faldas from "../assets/Faldas.jpg";
 import Pantalones from "../assets/Pantalones.jpg";
 import Obsequio from "../assets/Obsequio.png";
 import Vestidos from "../assets/Vestidos.jpg";
+import corporativo from "../assets/corporativo.jpg";
 import "./carrucel.css";
 
 import anuncio1 from "../assets/anuncio1.jpg";
 import anuncio2 from "../assets/anuncio2.jpg";
 import anuncio3 from "../assets/anuncio3.jpg";
 import anuncio4 from "../assets/anuncio4.jpg";
+import anuncio5 from "../assets/anuncio5.jpg";
+import anuncio6 from "../assets/anuncio6.jpg";
 
 import Colores_LemonTree from "../assets/Colores_LemonTree.mp4";
 import { useNavigate } from "react-router-dom";
@@ -68,7 +71,7 @@ const IndiceDeProductos = () => {
           {/* Tarjeta 5 */}
           <button onClick={() => navigate("/productListVestidos")} className="bg-white rounded-xl shadow-md hover:shadow-xl transition p-4">
             <img
-              src={Vestidos}
+              src={corporativo}
               alt="Blazer 5"
               className="w-full h-48 object-cover rounded-lg"
             />
@@ -190,12 +193,16 @@ const IndiceDeProductos = () => {
             <img src={anuncio2} alt=""/>
             <img src={anuncio3} alt=""/>
             <img src={anuncio4} alt=""/>
+             <img src={anuncio5} alt=""/>
+            <img src={anuncio6} alt=""/>
 
                    {/* <!-- Duplicadas para loop infinito -->*/}
             <img src={anuncio1} alt=""/>
             <img src={anuncio2} alt=""/>
             <img src={anuncio3} alt=""/>
             <img src={anuncio4} alt=""/>
+             <img src={anuncio5} alt=""/>
+            <img src={anuncio6} alt=""/>
          </div>
 
         </div>
