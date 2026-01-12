@@ -35,3 +35,8 @@
     transform: translateX(-50%);
   }
 }
+
+.carousel:hover .carousel-track {
+  animation-play-state: paused;
+}
+
