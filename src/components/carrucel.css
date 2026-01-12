@@ -6,15 +6,16 @@
 
 .carousel-track {
   display: flex;
-  width: calc(250px * 8);
-  animation: scroll 20s linear infinite;
+  animation: scroll 25s linear infinite;
 }
 
+/* 🔥 IMAGEN COMPLETA */
 .carousel img {
-  width: 250px;
-  height: 150px;
-  object-fit: cover;
-  margin-right: 10px;
+  width: 300px;          /* puedes ajustar */
+  height: auto;          /* clave */
+  max-height: 400px;     /* evita que se haga gigante */
+  object-fit: contain;   /* 👈 NO recorta */
+  margin-right: 20px;
 }
 
 /* Animación infinita */
@@ -23,10 +24,11 @@
     transform: translateX(0);
   }
   100% {
-    transform: translateX(calc(-250px * 4));
+    transform: translateX(-50%);
   }
 }
 
+/* Pausa al pasar el mouse */
 .carousel:hover .carousel-track {
   animation-play-state: paused;
 }

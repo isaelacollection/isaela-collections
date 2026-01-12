@@ -186,10 +186,10 @@ const IndiceDeProductos = () => {
         {/*seccion del carrucel */}
         <div class="carousel">
           <div class="carousel-track">
-            <img src="anuncio1.jpg" alt=""/>
-            <img src="anuncio2.jpg" alt=""/>
-            <img src="anuncio3.jpg" alt=""/>
-            <img src="anuncio4.jpg" alt=""/>
+            <img src={anuncio1} alt=""/>
+            <img src={anuncio2} alt=""/>
+            <img src={anuncio3} alt=""/>
+            <img src={anuncio4} alt=""/>
 
                    {/* <!-- Duplicadas para loop infinito -->*/}
             <img src={anuncio1} alt=""/>
