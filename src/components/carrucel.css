@@ -6,7 +6,7 @@
 
 .carousel-track {
   display: flex;
-  animation: scroll 25s linear infinite;
+  animation: scroll 6s linear infinite;
 }
 
 /* 🔥 IMAGEN COMPLETA */
