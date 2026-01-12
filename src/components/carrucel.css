@@ -6,16 +6,38 @@
 
 .carousel-track {
   display: flex;
-  animation: scroll 6s linear infinite;
+  animation: scroll 8s linear infinite;
 }
 
-/* 🔥 IMAGEN COMPLETA */
+/* 🖥️ DESKTOP */
 .carousel img {
-  width: 300px;          /* puedes ajustar */
-  height: auto;          /* clave */
-  max-height: 400px;     /* evita que se haga gigante */
-  object-fit: contain;   /* 👈 NO recorta */
+  width: 300px;
+  height: auto;
+  max-height: 400px;
+  object-fit: contain;
   margin-right: 20px;
+}
+
+/* 📱 CELULAR */
+@media (max-width: 640px) {
+  .carousel-track {
+    animation: scroll 5s linear infinite; /* más rápido en móvil */
+  }
+
+  .carousel img {
+    width: 220px;        /* más angosta */
+    max-height: 320px;   /* evita cortes */
+    margin-right: 15px;
+  }
+}
+
+/* 📱📱 CELULAR PEQUEÑO */
+@media (max-width: 420px) {
+  .carousel img {
+    width: 180px;
+    max-height: 280px;
+    margin-right: 10px;
+  }
 }
 
 /* Animación infinita */
@@ -28,7 +50,7 @@
   }
 }
 
-/* Pausa al pasar el mouse */
+/* Pausa al tocar */
 .carousel:hover .carousel-track {
   animation-play-state: paused;
 }
