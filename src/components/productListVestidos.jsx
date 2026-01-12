@@ -57,7 +57,7 @@ const ProductListVestidos = () => {
   return (
     <section className="main-content">
 
-      <h2 className="title">Productos(Vestidos) Disponibles</h2>
+      <h2 className="title">Conjuntos Corporativos Disponibles</h2>
       {/* Muestra el mensaje de error si existe */}
       {error && <p className="error-message">{error}</p>}
 

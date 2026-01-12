@@ -72,7 +72,7 @@ const IndiceDeProductos = () => {
               alt="Blazer 5"
               className="w-full h-48 object-cover rounded-lg"
             />
-            <h3 className="text-center mt-2 font-semibold">👆 Vestidos</h3>
+            <h3 className="text-center mt-2 font-semibold">👆 Conjuntos corporativos</h3>
           </button>
 
         </div >
