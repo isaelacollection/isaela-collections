@@ -1,56 +1,37 @@
 .carousel {
   width: 100%;
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: visible;
   background: #fff;
 }
 
 .carousel-track {
   display: flex;
-  animation: scroll 8s linear infinite;
+  width: max-content;          /* 🔥 clave */
+  animation: scroll 6s linear infinite;
 }
 
-/* 🖥️ DESKTOP */
 .carousel img {
-  width: 300px;
+  width: 220px;
   height: auto;
-  max-height: 400px;
+  max-height: none;            /* 🔥 NO limitar */
   object-fit: contain;
-  margin-right: 20px;
+  margin-right: 15px;
 }
 
-/* 📱 CELULAR */
-@media (max-width: 640px) {
-  .carousel-track {
-    animation: scroll 5s linear infinite; /* más rápido en móvil */
-  }
-
-  .carousel img {
-    width: 220px;        /* más angosta */
-    max-height: 320px;   /* evita cortes */
-    margin-right: 15px;
-  }
-}
-
-/* 📱📱 CELULAR PEQUEÑO */
+/* Responsive extra */
 @media (max-width: 420px) {
   .carousel img {
     width: 180px;
-    max-height: 280px;
-    margin-right: 10px;
   }
 }
 
-/* Animación infinita */
+/* Animación */
 @keyframes scroll {
-  0% {
+  from {
     transform: translateX(0);
   }
-  100% {
+  to {
     transform: translateX(-50%);
   }
-}
-
-/* Pausa al tocar */
-.carousel:hover .carousel-track {
-  animation-play-state: paused;
 }
