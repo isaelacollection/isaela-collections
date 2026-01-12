@@ -67,13 +67,13 @@ const subirProductoVestidos = ({ onProductoAgregado }) => {
           <option value="Pantalon">Pantalon</option>
           <option value="Blusa">Blusa</option>
           <option value="Falda">Falda</option>
-          <option value="Vestido">Vestido</option>
+          <option value="Vestido">Conjunto Corporativo</option>
         </select>
 
       </div>
 
       <div>
-        <label className="block text-gray-700 mb-1">Nombre Vestido</label>
+        <label className="block text-gray-700 mb-1">Nombre del Conjunto Corporativo</label>
         <input
           type="text"
           value={nombreVestido}
@@ -83,7 +83,7 @@ const subirProductoVestidos = ({ onProductoAgregado }) => {
       </div>
 
       <div>
-        <label className="block text-gray-700 mb-1">Precio Vestido</label>
+        <label className="block text-gray-700 mb-1">Precio del Conjunto Corporativo</label>
         <input
           type="number"
           value={precioVestido}
@@ -93,7 +93,7 @@ const subirProductoVestidos = ({ onProductoAgregado }) => {
       </div>
 
       <div>
-        <label className="block text-gray-700 mb-1">Stock Vestido</label>
+        <label className="block text-gray-700 mb-1">Stock del Conjunto Corporativo</label>
         <input
           type="number"
           value={stockVestido}
