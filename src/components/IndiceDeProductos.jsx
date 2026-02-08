@@ -102,7 +102,7 @@ const IndiceDeProductos = () => {
               </h2>
 
               <p className="text-xl md:text-2xl font-semibold text-gray-800 leading-relaxed">
-                Por la compra de una prenda recibe de regalo
+                Por compras superiores a $50 reciben un Obsequio gratis
                 <span className="block text-pink-500 font-bold">
                   un top tipo strapless o una blusa
                 </span>
@@ -158,7 +158,7 @@ const IndiceDeProductos = () => {
               </h2>
 
               <p className="text-xl md:text-2xl font-semibold text-gray-800 leading-relaxed">
-                Por la compra de una prenda recibe de regalo
+                Por compras superiores a $50 reciben un Obsequio gratis
                 <span className="block text-pink-500 font-bold">
                   un top tipo strapless o una blusa
                 </span>
